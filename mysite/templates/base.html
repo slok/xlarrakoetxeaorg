@@ -1,141 +1,138 @@
-<!DOCTYPE html> <!-- The new doctype -->
-<html>
-    <head>
-    
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        
-        <title>Coding A CSS3 &amp; HTML5 One Page Template | Tutorialzine demo</title>
-        
-        <link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/styles.css" />
-        
-        <!-- Internet Explorer HTML5 enabling code: -->
-        
-        <!--[if IE]>
-        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-        
-        <style type="text/css">
-        .clear {
-          zoom: 1;
-          display: block;
-        }
-        </style>
+<!doctype html>
 
-        
-        <![endif]-->
-        
-    </head>
-    
-    <body>
-    	
-    	<section id="page"> <!-- Defining the #page section with the section tag -->
-    
-            <header> <!-- Defining the header section of the page with the appropriate tag -->
-            
-                <hgroup>
-                    <h1>Your Logo</h1>
-                    <h3>and a fancy slogan</h3>
-                </hgroup>
-                                
-                <section id="navmenu">
-                    <nav class="clear"> <!-- The nav link semantically marks your main site navigation -->
-                        <ul>
-                            <li><a href="#article1">Photoshoot</a></li>
-                            <li><a href="#article2">Sweet Tabs</a></li>
-                            <li><a href="#article3">Navigation Menu</a></li>
-                        </ul>
-                    </nav>
-                </section>
-            
-            </header>
-            
-            <section id="articles"> <!-- A new section with the articles -->
+<!--[if lt IE 7 ]> <html class="ie ie6 no-js" lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie ie7 no-js" lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie ie8 no-js" lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie ie9 no-js" lang="en"> <![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" lang="en"><!--<![endif]-->
+<!-- the "no-js" class is for Modernizr. -->
 
-				<!-- Article 1 start -->
+<head id="www-sitename-com" data-template-set="html5-reset">
 
-                <div class="line"></div>  <!-- Dividing line -->
-                
-                <article id="article1"> <!-- The new article tag. The id is supplied so it can be scrolled into view. -->
-                    <h2>Photoshoot Effect</h2>
-                    
-                    <div class="line"></div>
-                    
-                    <div class="articleBody clear">
-                    
-                    	<figure> <!-- The figure tag marks data (usually an image) that is part of the article -->
-	                    	<a href="http://tutorialzine.com/2010/02/photo-shoot-css-jquery/"><img src="http://tutorialzine.com/img/featured/641.jpg" width="620" height="340" /></a>
-                        </figure>
-                        
-                        <p>In this tutorial, we are creating a photo shoot effect with our just-released PhotoShoot jQuery plug-in. With it you can convert a regular div on the page into a photo shooting stage simulating a camera-like feel.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus quam quis nibh fringilla sit amet consectetur lectus malesuada. Sed nec libero erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nisi, rhoncus ut vestibulum ac, sollicitudin quis lorem. Duis felis dui, vulputate nec adipiscing nec, interdum vel tortor. Sed gravida, erat nec rutrum tincidunt, metus mauris imperdiet nunc, et elementum tortor nunc at eros. Donec malesuada congue molestie. Suspendisse potenti. Vestibulum cursus congue sem et feugiat. Morbi quis elit odio. </p>
-                    </div>
-                </article>
-                
-				<!-- Article 1 end -->
+	<meta charset="utf-8">
+	
+	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	
+	<title>{% block title %}{% endblock %}</title>
+	
+	<meta name="title" content="">
+	<meta name="description" content="">
+	<!-- Google will often use this as its description of your page/site. Make it good. -->
+	
+	<meta name="google-site-verification" content="">
+	<!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
+	
+	<meta name="author" content="Your Name Here">
+	<meta name="Copyright" content="Copyright Your Name Here 2011. All Rights Reserved.">
 
+	<!-- Dublin Core Metadata : http://dublincore.org/ -->
+	<meta name="DC.title" content="Project Name">
+	<meta name="DC.subject" content="What you're about.">
+	<meta name="DC.creator" content="Who made this site.">
+	
+	<!--  Mobile Viewport Fix
+	j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
+	device-width : Occupy full width of the screen in its current orientation
+	initial-scale = 1.0 retains dimensions instead of zooming out if page height > device height
+	maximum-scale = 1.0 retains dimensions instead of zooming in if page width < device width
+	-->
+	<!-- Uncomment to use; use thoughtfully!
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	-->
 
-				<!-- Article 2 start -->
+	<link rel="shortcut icon" href="{{STATIC_URL}}img/favicon.ico">
+	<!-- This is the traditional favicon.
+		 - size: 16x16 or 32x32
+		 - transparency is OK
+		 - see wikipedia for info on browser support: http://mky.be/favicon/ -->
+		 
+	<link rel="apple-touch-icon" href="{{STATIC_URL}}img/apple-touch-icon.png">
+	<!-- The is the icon for iOS's Web Clip.
+		 - size: 57x57 for older iPhones, 72x72 for iPads, 114x114 for iPhone4's retina display (IMHO, just go ahead and use the biggest one)
+		 - To prevent iOS from applying its styles to the icon name it thusly: apple-touch-icon-precomposed.png
+		 - Transparency is not recommended (iOS will put a black BG behind the icon) -->
+	
+	<!-- CSS: screen, mobile & print are all in the same file -->
+	<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
+	
+	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
+	<script src="{{STATIC_URL}}js/modernizr-1.7.min.js"></script>
 
-                <div class="line"></div>
-                
-                <article id="article2">
-                    <h2>Sweet AJAX Tabs</h2>
-                    
-                    <div class="line"></div>
-                    
-                    <div class="articleBody clear">
-                    	<figure>
-	                    	<a href="http://tutorialzine.com/2010/01/sweet-tabs-jquery-ajax-css/"><img src="http://tutorialzine.com/img/featured/633.jpg" width="620" height="340" /></a>
-                        </figure>
-                        
-                        <p>Here we are making sweet AJAX-powered tabs with CSS3 and the newly released version 1.4 of jQuery.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus quam quis nibh fringilla sit amet consectetur lectus malesuada. Sed nec libero erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nisi, rhoncus ut vestibulum ac, sollicitudin quis lorem. Duis felis dui, vulputate nec adipiscing nec, interdum vel tortor. Sed gravida, erat nec rutrum tincidunt, metus mauris imperdiet nunc, et elementum tortor nunc at eros. Donec malesuada congue molestie. Suspendisse potenti. Vestibulum cursus congue sem et feugiat. Morbi quis elit odio. </p>
-                    </div>
-                </article>
-                
-				<!-- Article 2 end -->
+</head>
 
-				<!-- Article 3 start -->
+<body>
 
-                <div class="line"></div>
-                
-                <article id="article3">
-                    <h2>Halftone Navigation Menu</h2>
-                    
-                    <div class="line"></div>
-                    
-                    <div class="articleBody clear">
-                    	<figure>
-	                    	<a href="http://tutorialzine.com/2010/01/halftone-navigation-menu-jquery-css/"><img src="http://tutorialzine.com/img/featured/610.jpg" width="620" height="340" /></a>
-                        </figure>
-                        
-                        <p>Today we are making a CSS3 & jQuery halftone-style navigation menu, which will allow you to display animated halftone-style shapes in accordance with the navigation links, and will provide a simple editor for creating additional shapes as well.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer luctus quam quis nibh fringilla sit amet consectetur lectus malesuada. Sed nec libero erat. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mi nisi, rhoncus ut vestibulum ac, sollicitudin quis lorem. Duis felis dui, vulputate nec adipiscing nec, interdum vel tortor. Sed gravida, erat nec rutrum tincidunt, metus mauris imperdiet nunc, et elementum tortor nunc at eros. Donec malesuada congue molestie. Suspendisse potenti. Vestibulum cursus congue sem et feugiat. Morbi quis elit odio. </p>
-                    </div>
-                </article>
-                
-				<!-- Article 3 end -->
+<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
+	<header>
+		
+		<h1><a href="/">Page Title</a></h1>
+		
+		<nav>
+		
+			<ol>
+				<li><a href="">Nav Link 1</a></li>
+				<li><a href="">Nav Link 2</a></li>
+				<li><a href="">Nav Link 3</a></li>
+			</ol>
+		
+		</nav>
+	
+	</header>
+	
+	<article>
+		
+		<h1>Article Header</h1>
+		
+		<p>Etiam pretium odio eu mi convallis vitae varius neque pharetra. Nulla vestibulum nisi ut sem cursus sed mattis nisi egestas.</p>
+		
+		<h2>Article Subhead</h2>
+		
+		<p>Vestibulum lacus erat, volutpat vel dignissim at, fringilla ut felis.</p>
+	
+	</article>
+	
+	<aside>
+	
+		<h2>Sidebar Content</h2>
+	
+	</aside>
+	
+	<footer>
+		
+		<p><small>&copy; Copyright Your Name Here 2011. All Rights Reserved.</small></p>
+		
+	</footer>
 
-            </section>
+</div>
 
-        <footer> <!-- Marking the footer section -->
+<!-- here comes the javascript -->
 
-           <div class="line"></div>
-           
-           <p>Copyright 2010 - YourSite.com</p> <!-- Change the copyright notice -->
-           
-           <a href="#" class="up">Go UP</a>
-           <a href="http://tutorialzine.com/2010/02/html5-css3-website-template/" class="by">Template by Tutorialzine</a>
-           
+<!-- Grab Google CDN's jQuery. fall back to local if necessary -->
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='{{STATIC_URL}}js/jquery-1.5.1.min.js'>\x3C/script>")</script>
 
-        </footer>
-            
-		</section> <!-- Closing the #page section -->
-        
-        <!-- JavaScript Includes -->
-        
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-        <script src="{{ STATIC_URL }}js/jquery.scrollTo-min.js"></script>
-        <script src="{{ STATIC_URL }}js/script.js"></script>
-    </body>
+<!-- this is where we put our custom functions -->
+<script src="{{STATIC_URL}}js/functions.js"></script>
+
+<!-- Asynchronous google analytics; this is the official snippet.
+	 Replace UA-XXXXXX-XX with your site's ID and uncomment to enable.
+	 
+<script>
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-XXXXXX-XX']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+-->
+  
+</body>
 </html>
