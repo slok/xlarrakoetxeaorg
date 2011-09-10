@@ -1,6 +1,10 @@
 from django.db import models
 from django.contrib.auth.models import User
 from tagging.fields import TagField
+import datetime
+
+from mysite.blog.managers import PublishedManager
+
 
 def _admin_users_in_choices():
     raw_users = User.objects.all()
@@ -30,12 +34,17 @@ class Entry(models.Model):
     body = models.TextField()
     slug = models.SlugField('slug', unique_for_date='pub_date')
     author = models.CharField(max_length=30, choices=user_choices)
-    pub_date = models.DateTimeField('Date published', auto_now_add=True)
+    #pub_date = models.DateTimeField('Date published', auto_now_add=True)
+    pub_date = models.DateTimeField('Date published', default=datetime.datetime.now) #if we want to publish i the future we need to put the date "manualy"
     mod_date =  models.DateTimeField('Date modified', auto_now=True)
     tags = TagField()
     status =  models.CharField(max_length=1, choices=status_choices, default='d')
     allow_comments = models.BooleanField(default=True)
     entry_format = models.CharField(max_length=30, choices=entry_format_choices, default='md')
+    
+    #Manager with filter and default
+    objects = models.Manager()
+    published_objects = PublishedManager()
 
     def __unicode__(self):
         return u'%s' % self.title
