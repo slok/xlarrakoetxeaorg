@@ -55,6 +55,9 @@
 	
 	<!-- CSS: screen, mobile & print are all in the same file -->
 	<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
+    
+    <!-- 960 grid system -->
+    <link rel="stylesheet" href="{{STATIC_URL}}css/960.css" />
 	
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
 	<script src="{{STATIC_URL}}js/modernizr-1.7.min.js"></script>
@@ -63,9 +66,9 @@
 
 <body>
 
-<div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
+<div class="wrapper container_12"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
-	<header>
+	<header class="grid_12">
 		
 		<h1><a href="/">Page Title</a></h1>
 		
@@ -80,17 +83,22 @@
 		</nav>
 	
 	</header>
-	<section id="main-section">
+    
+    <div class="clear"></div>
+    
+    <section id="main-section" class="grid_9">
         {% block mainSection %}{% endblock %}
 	</section>
-
-	<aside>
+    
+	<aside class="grid_3">
 	
 		<h2>Sidebar Content</h2>
 	
 	</aside>
 	
-	<footer>
+     <div class="clear"></div>
+    
+	<footer class="grid_12">
 		
 		<p><small>&copy; Copyright Your Name Here 2011. All Rights Reserved.</small></p>
 		
