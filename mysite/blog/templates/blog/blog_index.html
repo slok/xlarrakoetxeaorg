@@ -1,11 +1,13 @@
-{% extends "blog/blog.html" %} 
+{% extends "blog/blog.html" %}
+{% load readmorefilter %}
+ 
 {% block mainSection %}
     <section id="main-section" class="grid_9">
     {%for entry in entries%}
         <article>
             <h3>{{entry.title}}</h3>
             </br>
-            {{entry.body|truncatewords:20}}
+            {{entry.body|readmore:'<!--more-->'}}
             </br></br>
             by: {{entry.author.username}} on {{entry.pub_date}}
         </article>
