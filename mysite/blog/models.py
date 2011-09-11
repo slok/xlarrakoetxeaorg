@@ -35,7 +35,7 @@ class Entry(models.Model):
     slug = models.SlugField('slug', unique_for_date='pub_date')
     author = models.CharField(max_length=30, choices=user_choices)
     #pub_date = models.DateTimeField('Date published', auto_now_add=True)
-    pub_date = models.DateTimeField('Date published', default=datetime.datetime.now) #if we want to publish i the future we need to put the date "manualy"
+    pub_date = models.DateTimeField('Date published', default=datetime.datetime.now) #if we want to publish in the future we need to put the date "manually"
     mod_date =  models.DateTimeField('Date modified', auto_now=True)
     tags = TagField()
     status =  models.CharField(max_length=1, choices=status_choices, default='d')

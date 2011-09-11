@@ -73,28 +73,24 @@
 		<h1><a href="/">Page Title</a></h1>
 		
 		<nav>
-		
 			<ol>
+                {% block navmenu %}
 				<li><a href="/blog">Blog</a></li>
 				<li><a href="/projects">Projects</a></li>
 				<li><a href="/about">About</a></li>
+                {% endblock navmenu %}
 			</ol>
-		
 		</nav>
 	
 	</header>
     
     <div class="clear"></div>
     
-    <section id="main-section" class="grid_9">
-        {% block mainSection %}{% endblock %}
-	</section>
+    {% block mainSection %}
+    {% endblock %}
     
-	<aside class="grid_3">
-	
-		<h2>Sidebar Content</h2>
-	
-	</aside>
+    {% block sidebar %}
+    {% endblock sidebar%}
 	
      <div class="clear"></div>
     
