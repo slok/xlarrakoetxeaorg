@@ -198,6 +198,9 @@ nav li a:hover {
 	background-color: #fff; }*/
     
 /*------------------*/
+html{
+    background-image:url('../img/bright_squares.png');
+    }
 /* Dark Button CSS */
 .button {
     outline: 0;
