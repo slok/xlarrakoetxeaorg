@@ -3,7 +3,7 @@
  
 {% block mainSection %}
     <section id="main-section" class="grid_9">
-    {%for entry in entries%}
+    {%for entry in entries.object_list%}
         <article>
             <h3>{{entry.title}}</h3>
             </br>
@@ -12,7 +12,25 @@
             by: {{entry.author.username}} on {{entry.pub_date}}
         </article>
     </br>
+    
     {% endfor %}
+        <div class="pagination">
+            <span class="step-links">
+                {% if entries.has_previous %}
+                    <a href="?page={{ entries.previous_page_number }}">previous</a>
+                {% endif %}
+
+                <span class="current">
+                    Page {{ entries.number }} of {{ entries.paginator.num_pages }}.
+                </span>
+
+                {% if entries.has_next %}
+                    <a href="?page={{ entries.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
     </section>
+
+
 {% endblock mainSection %}
 
