@@ -164,17 +164,34 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 /*From http://www.css3.me*/
 
 article {
-    background-color:transparent;
+    background-color:#abb9cc;
     border-width:1px;
-    border-color:#999999;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:5px;
+    border-color:#000000;
+    -moz-border-radius:4px;
+    -webkit-border-radius:4px;
+    border-radius:4px;
     /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
-    -moz-box-shadow:0px 0px 3px #000000;
-    -webkit-box-shadow:0px 0px 3px #000000;
-    box-shadow:0px 0px 3px #000000;
+    -moz-box-shadow:0px 0px 1px #736e70;
+    -webkit-box-shadow:0px 0px 1px #736e70;
+    box-shadow:0px 0px 1px #736e70;
     /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    background-image: -moz-linear-gradient(top, #abb9cc, #9ca8ba);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#abb9cc), to(#9ca8ba));
+    background-image: -o-linear-gradient(top, #abb9cc, #9ca8ba);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#abb9cc', endColorstr='#9ca8ba');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#abb9cc', endColorstr='#9ca8ba')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: linear-gradient(top, #abb9cc, #9ca8ba);
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+
 }
 
 nav {

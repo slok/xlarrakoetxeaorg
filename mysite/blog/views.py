@@ -8,7 +8,7 @@ OBJECTS_PER_PAGE = 2
 
 def blog_index(request):
     
-    entries = _get_paginated_objects(Entry.published_objects.all(), request, 1)
+    entries = _get_paginated_objects(Entry.published_objects.all(), request)
     
     data = { 
         'entries' : entries,
