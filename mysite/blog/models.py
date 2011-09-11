@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+import django
 from tagging.fields import TagField
 import datetime
 
@@ -7,11 +8,21 @@ from mysite.blog.managers import PublishedManager
 
 
 def _admin_users_in_choices():
-    raw_users = User.objects.all()
-    users = []
-    for i in raw_users:
-        full_name = i.username
-        users.append((full_name, full_name))
+    """
+        gets all the admin users from auth_user
+    """
+    #We need to catch and pass this error because auth_user table isn't created before this and fails when it checks,
+    #the exception thrwon is: "django.db.utils.DatabaseError: no such table: auth_user"
+    try:
+        raw_users = User.objects.all()
+        users = []
+        for i in raw_users:
+            full_name = i.username
+            users.append((full_name, full_name))
+            
+    except django.db.utils.DatabaseError:
+        pass
+        
     return users
 
 class Entry(models.Model):
