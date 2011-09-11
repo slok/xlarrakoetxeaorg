@@ -1,4 +1,12 @@
 [
+   {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+        "username": "editor",
+        "password": "editor" 
+    }
+  },
   {
     "model": "blog.entry",
     "pk": 1,
@@ -6,7 +14,7 @@
         "title": "first fixture",
         "body": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla iaculis libero eget mauris pellentesque volutpat. Vivamus sollicitudin lacus a urna auctor faucibus. Nulla sagittis nunc quis purus accumsan quis lobortis sem molestie. Donec vehicula, nulla quis porttitor molestie, diam purus vestibulum nunc, quis sagittis eros neque a augue. Suspendisse enim mi, iaculis sed dictum et, vehicula a ligula. Duis porta nulla id dui suscipit cursus. Mauris placerat ultricies tortor, vitae rutrum justo imperdiet id. Integer purus lorem, consectetur a viverra et, vehicula vel augue. Phasellus velit eros, mollis nec aliquam et, luctus quis metus. Duis pulvinar purus dignissim nulla sollicitudin dignissim. Praesent varius lectus blandit orci porta pulvinar. Phasellus in nunc vel tortor tincidunt interdum. Aliquam dictum vehicula consequat. Fusce quis nisl ut ipsum tincidunt sodales. ",
         "slug": "first-fixture",
-        "author": "slok",
+        "author": 1,
         "pub_date": "2011-09-11 08:44:00",
         "mod_date": "2011-09-11 08:53:05",
         "status": "p",
@@ -21,7 +29,7 @@
         "title": "second fixture",
         "body": "Vestibulum rhoncus dictum faucibus. Mauris eget enim elit, nec ultricies nisi. Morbi euismod purus non velit dapibus at bibendum velit consectetur. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur ut ornare ipsum. Phasellus et sem vel lorem euismod ultrices. Pellentesque congue diam eu tortor malesuada interdum sed non sapien. In dolor orci, auctor eu iaculis ac, egestas accumsan nisi. Aliquam eu libero lacus. Aliquam egestas tempus neque id luctus. Vestibulum sit amet odio in justo sollicitudin malesuada. Donec leo magna, tincidunt ut cursus quis, viverra et purus. Vestibulum pharetra tempor venenatis. Nunc arcu arcu, ullamcorper at condimentum in, sollicitudin a diam. Nulla ut sapien sapien, vitae varius velit. ",
         "slug": "second-fixture",
-        "author": "slok",
+        "author": 1,
         "pub_date": "2011-09-11 08:59:00",
         "mod_date": "2011-09-11 09:00:05",
         "status": "d",
@@ -36,7 +44,7 @@
         "title": "third fixture",
         "body": "Fusce eget turpis dolor. Fusce adipiscing mattis volutpat. Sed vitae urna sem, quis mollis dui. Ut hendrerit ante quis lacus vehicula vestibulum sollicitudin augue luctus. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Ut eu felis elit. Proin volutpat fringilla auctor. Ut vehicula fringilla facilisis. Praesent eget diam feugiat ligula mattis semper quis et massa. Pellentesque nec justo augue, et dignissim lacus. Donec imperdiet dignissim rhoncus. Mauris varius lectus ipsum. Nulla facilisi. Suspendisse sodales tincidunt dolor, ac fermentum arcu tincidunt at. Etiam id leo eget ante fringilla bibendum. Nam dolor arcu, gravida non convallis et, condimentum a diam. Sed metus libero, tempor eget luctus at, fringilla vel magna. Nam eu augue mi. Phasellus vel nunc in ligula consectetur vulputate in luctus diam. Aenean quam sem, pretium rhoncus cursus ut, rhoncus id mauris. Maecenas arcu nulla, molestie sed tincidunt id, iaculis in ipsum. Morbi elit neque, feugiat non laoreet eget, suscipit ultrices justo. Cras euismod quam eget risus feugiat sodales. ",
         "slug": "third-fixture",
-        "author": "slok",
+        "author": 1,
         "pub_date": "2011-09-11 01:59:00",
         "mod_date": "2011-09-11 10:00:05",
         "status": "p",
@@ -51,7 +59,7 @@
         "title": "fourth fixture",
         "body": "Curabitur enim urna, fermentum ut eleifend quis, consectetur cursus neque. Nunc velit turpis, dignissim sit amet viverra eu, dapibus quis turpis. Etiam non ante in nisl congue pellentesque. Vivamus arcu nulla, adipiscing eu imperdiet quis, condimentum ut tortor. Curabitur justo justo, mattis at commodo nec, lobortis at turpis. Vestibulum sit amet dolor nec tortor ornare egestas. Curabitur tristique arcu in nunc pharetra eget egestas urna auctor. Mauris eleifend leo sodales urna ornare sit amet pellentesque purus pulvinar. Mauris dictum accumsan condimentum. Etiam gravida lacinia justo, non dignissim nisl semper id. Vestibulum non nunc diam. Aliquam ac lorem ut lacus euismod scelerisque. Cras id turpis lacinia dui porta vehicula. ",
         "slug": "fourth-fixture",
-        "author": "slok",
+        "author": 2,
         "pub_date": "2011-05-11 03:29:28",
         "mod_date": "2011-06-11 10:34:25",
         "status": "p",
@@ -66,7 +74,7 @@
         "title": "fiveth fixture",
         "body": "Curabitur enim urna, fermentum ut eleifend quis, consectetur cursus neque. Nunc velit turpis, dignissim sit amet viverra eu, dapibus quis turpis. Etiam non ante in nisl congue pellentesque. Vivamus arcu nulla, adipiscing eu imperdiet quis, condimentum ut tortor. Curabitur justo justo, mattis at commodo nec, lobortis at turpis. Vestibulum sit amet dolor nec tortor ornare egestas. Curabitur tristique arcu in nunc pharetra eget egestas urna auctor. Mauris eleifend leo sodales urna ornare sit amet pellentesque purus pulvinar. Mauris dictum accumsan condimentum. Etiam gravida lacinia justo, non dignissim nisl semper id. Vestibulum non nunc diam. Aliquam ac lorem ut lacus euismod scelerisque. Cras id turpis lacinia dui porta vehicula. ",
         "slug": "fiveth-fixture",
-        "author": "slok",
+        "author": 1,
         "pub_date": "2011-06-11 21:49:17",
         "mod_date": "2011-06-11 23:14:25",
         "status": "p",
