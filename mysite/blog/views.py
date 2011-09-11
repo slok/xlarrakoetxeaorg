@@ -16,23 +16,35 @@ def blog_index(request):
     
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
 
-def blog_entry_detail(request, year, month, day, slug):
+def blog_entry_detail(request, year, month, slug):
+    
+    entries = Entry.published_objects.all().filter(slug=slug, pub_date__year = int(year), pub_date__month = int(month))
+    entries = _get_paginated_objects(entries, request) #temporary, is needed because the template needs a pagination object
+    
     data = { 
-        '' : '',
+        'entries' : entries,
     }
     
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
 
 def blog_entries_month(request, year, month):
+    
+    entries = Entry.published_objects.all().filter(pub_date__year = int(year), pub_date__month = int(month))
+    entries = _get_paginated_objects(entries, request)
+    
     data = { 
-        '' : '',
+        'entries' : entries,
     }
     
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
 
 def blog_entries_year(request, year):
+    
+    entries = Entry.published_objects.all().filter(pub_date__year = int(year))
+    entries = _get_paginated_objects(entries, request)
+    
     data = { 
-        '' : '',
+        'entries' : entries,
     }
     
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
