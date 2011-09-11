@@ -3,9 +3,9 @@ from django.template import RequestContext
 from mysite.blog.models import Entry
 
 def blog_index(request):
-    print Entry.published_objects.all()
+    entries = Entry.published_objects.all()
     data = { 
-        '' : '',
+        'entries' : entries,
     }
     
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
