@@ -56,7 +56,7 @@ class Entry(models.Model):
     tags = TagField()
     status =  models.CharField(max_length=1, choices=status_choices, default='d')
     allow_comments = models.BooleanField(default=True)
-    entry_format = models.CharField(max_length=30, choices=entry_format_choices, default='md')
+    entry_format = models.CharField(max_length=30, choices=entry_format_choices, default='html')
     
     #Manager with filter and default
     objects = models.Manager()
