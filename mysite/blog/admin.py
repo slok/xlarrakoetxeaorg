@@ -23,9 +23,11 @@ class AdminEntry(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ['title', 'body']
 
-cm = CommonMedia    
-if not settings.ENABLE_DOJO_EDITOR:
-    cm = None
+#Set the Dojo editor or not (HTML vs Markdown)
+cm = None
+if settings.ENABLE_DOJO_EDITOR:
+    cm = CommonMedia
+
 admin.site.register(Entry, AdminEntry, Media = cm)
 
 
