@@ -1,4 +1,6 @@
 
+ENABLE_DOJO_EDITOR = True
+
 DEBUG = True
 
 ADMINS = (

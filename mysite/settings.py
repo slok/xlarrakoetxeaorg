@@ -6,6 +6,10 @@ import deploy
 #Base dir of the project
 BASE_DIR = os.path.dirname(__file__)
 
+#If you want to enable Dojo editor in the admin section to edit HTML enable
+#If isn't enabled (False) then the def format is Markdown (although you can change in the format attribute) 
+ENABLE_DOJO_EDITOR= deploy.ENABLE_DOJO_EDITOR
+
 DEBUG = deploy.DEBUG
 TEMPLATE_DEBUG = DEBUG
 

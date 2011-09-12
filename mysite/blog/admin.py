@@ -22,8 +22,10 @@ class AdminEntry(admin.ModelAdmin):
     list_display = ('title', 'pub_date', 'status', 'author', 'mod_date')
     prepopulated_fields = {'slug': ('title',)}
     search_fields = ['title', 'body']
-    
-    
-admin.site.register(Entry, AdminEntry, Media = CommonMedia)
+
+cm = CommonMedia    
+if not settings.ENABLE_DOJO_EDITOR:
+    cm = None
+admin.site.register(Entry, AdminEntry, Media = cm)
 
 

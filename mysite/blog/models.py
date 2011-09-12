@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 import django
 from tagging.fields import TagField
 import datetime
-
+import settings
 from mysite.blog.managers import PublishedManager
 
 
@@ -30,6 +30,12 @@ def _get_default_user():
 
 
 class Entry(models.Model):
+    
+    #if is enabled dojo editor then the default format is html if not, Markdown :D
+    def_format = 'md'
+    if settings.ENABLE_DOJO_EDITOR:
+        def_format = 'html'
+    
     #Choices
     #user_choices = _admin_users_in_choices()
     
@@ -42,7 +48,7 @@ class Entry(models.Model):
     entry_format_choices = (
         ('html', 'HTML'),
         ('md', 'Markdown'),
-        ('rst', 'reStructuredText'),
+        #('rst', 'reStructuredText'),
     )
     #Model
     title = models.CharField('title', max_length=200)
@@ -56,7 +62,7 @@ class Entry(models.Model):
     tags = TagField()
     status =  models.CharField(max_length=1, choices=status_choices, default='d')
     allow_comments = models.BooleanField(default=True)
-    entry_format = models.CharField(max_length=30, choices=entry_format_choices, default='html')
+    entry_format = models.CharField(max_length=30, choices=entry_format_choices, default=def_format)
     
     #Manager with filter and default
     objects = models.Manager()
