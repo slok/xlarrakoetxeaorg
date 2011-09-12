@@ -1,14 +1,18 @@
 from django.shortcuts import render_to_response
 from django.template import RequestContext
-from django.core.paginator import Paginator, InvalidPage, EmptyPage
+from django.http import Http404
+from django.utils.translation import ugettext as _
+
+from mysite.blog import utils
 from mysite.blog.models import Entry
 
-#Objects for the pagination
-OBJECTS_PER_PAGE = 2
+from tagging.models import Tag, TaggedItem
+from tagging.utils import get_tag, get_queryset_and_model
+
 
 def blog_index(request):
     
-    entries = _get_paginated_objects(Entry.published_objects.all(), request)
+    entries = utils.get_paginated_objects(Entry.published_objects.all(), request)
     
     data = { 
         'entries' : entries,
@@ -19,18 +23,22 @@ def blog_index(request):
 def blog_entry_detail(request, year, month, slug):
     
     entries = Entry.published_objects.all().filter(slug=slug, pub_date__year = int(year), pub_date__month = int(month))
-    entries = _get_paginated_objects(entries, request) #temporary, is needed because the template needs a pagination object
+    #There are no entries, so... 404 page not found
+    if not entries:
+        raise Http404
+    
+    entries = utils.get_paginated_objects(entries, request) #temporary, is needed because the template needs a pagination object
     
     data = { 
         'entries' : entries,
     }
-    
+   
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
 
 def blog_entries_month(request, year, month):
     
     entries = Entry.published_objects.all().filter(pub_date__year = int(year), pub_date__month = int(month))
-    entries = _get_paginated_objects(entries, request)
+    entries = utils.get_paginated_objects(entries, request)
     
     data = { 
         'entries' : entries,
@@ -41,7 +49,7 @@ def blog_entries_month(request, year, month):
 def blog_entries_year(request, year):
     
     entries = Entry.published_objects.all().filter(pub_date__year = int(year))
-    entries = _get_paginated_objects(entries, request)
+    entries = utils.get_paginated_objects(entries, request)
     
     data = { 
         'entries' : entries,
@@ -49,21 +57,35 @@ def blog_entries_year(request, year):
     
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
 
-#####################################################################################################
+def tag_detail(request, slug):
+    
+    #piece of code obtained from tagging.views
+    
+    queryset_or_model = Entry.published_objects.all()
+    
+    tag_instance = get_tag(slug)
+    
+    if tag_instance is None:
+        raise Http404(_('No Tag found matching "%s".') % slug)
+    
+    queryset = TaggedItem.objects.get_by_model(queryset_or_model, tag_instance)
+    
+    #now paginate the resultants (maybe there are many posts with this tag)
+    entries = utils.get_paginated_objects(queryset, request, 10)
+    
+    data = { 
+        'entries' : entries,
+    }
+    
+    return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
+    
+def tag_list(request):
 
-def _get_paginated_objects(objects, request, opp=OBJECTS_PER_PAGE):
+    tag_cloud = Tag.objects.cloud_for_model(Entry, steps=3, filters=dict(status='p'))
+    data = { 
+        'tag_cloud' : tag_cloud,
+    }
     
-    paginator = Paginator(objects, opp)
-    
-    try:
-        page = int(request.GET.get('page'))
-    except (ValueError, TypeError):
-        page = 1
-   
-    try:
-        objects = paginator.page(page)
-    except  InvalidPage, EmptyPage:
-        # If page is out of range (e.g. 9999), deliver last page of results.
-        objects = paginator.page(paginator.num_pages)
-    
-    return objects
+    return render_to_response('blog/tag_list.html', data, context_instance=RequestContext(request))
+
+

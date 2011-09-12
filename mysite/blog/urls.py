@@ -10,4 +10,6 @@ urlpatterns = patterns('',
     url(r'^(?P<year>\d{4})/(?P<month>\d{2})/$', views.blog_entries_month),
     url(r'^(?P<year>\d{4})/$', views.blog_entries_year),
 
+    url(r'^tags/(?P<slug>[-\w]+)/$', views.tag_detail),
+    url(r'^tags/$', views.tag_list),
 ) 

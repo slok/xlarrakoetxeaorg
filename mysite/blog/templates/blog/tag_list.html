@@ -1,0 +1,11 @@
+{% extends "blog/blog.html" %}
+
+{% block mainSection %}
+    {% if tag_cloud %}
+        <p class="tagCloud">
+        {% for tag in tag_cloud %}
+            <a href="" style="font-size: {{ tag.font_size }}em;">{{ tag.name }}</a>
+        {% endfor %}
+        </p>
+    {% endif %}
+{% endblock mainSection %}
