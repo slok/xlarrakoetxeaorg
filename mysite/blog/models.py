@@ -4,6 +4,7 @@ import django
 from tagging.fields import TagField
 import datetime
 import settings
+
 from mysite.blog.managers import PublishedManager
 
 
@@ -26,7 +27,7 @@ from mysite.blog.managers import PublishedManager
 #    return users
 
 def _get_default_user():
-    return User.objects.get(pk=1)
+    return User.objects.get(pk=0)
 
 
 class Entry(models.Model):
@@ -71,4 +72,10 @@ class Entry(models.Model):
     def __unicode__(self):
         return u'%s' % self.title
 
-            
+    @models.permalink
+    def get_absolute_url(self):
+        #I use the name of the view in blog/urls.py, not the view
+        return ('blog.views.blog_entry_detail', (), {
+            'year': self.pub_date.year,
+            'month': self.pub_date.strftime("%m"),
+            'slug': self.slug})

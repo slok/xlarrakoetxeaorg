@@ -6,7 +6,7 @@
     <section id="main-section" class="grid_9">
     {%for entry in entries.object_list%}
         <article>
-            <h3>{{entry.title}}</h3>
+            <h3><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a>
             </br>
             {% if entry.entry_format == 'html' %}
             
