@@ -1,2 +1,37 @@
 {% extends "blog/blog_entries.html" %}  
- 
+{% load markup %}
+{% load disqus_tags %}
+
+{% block mainSection %}
+    <section id="main-section" class="grid_12">
+        <article>
+            <h3>{{entry.title}}</h3>
+            </br>
+            {% if entry.entry_format == 'html' %}
+            
+                {{entry.body|safe}}
+            
+                {% else %}{% if entry.entry_format == 'md' %}
+            
+                    {{entry.body|markdown:'safe,codehilite'}}
+                    
+                {% endif %}
+            {% endif %}
+            </br></br>
+            by: {{entry.author.username}} on {{entry.pub_date}}
+        </article>
+    </br>
+    </section>
+    
+    <div class="clear"></div>
+    
+    <section class="grid_12">
+        <h2 class="section-title">comments</h2>
+        {% if entry.allow_comments %}
+            {% disqus_dev %}
+            {% disqus_show_comments %}
+        {% else %}
+            <h3>Comments have been closed for this entry.</h3>
+        {% endif %}
+    </section>
+{% endblock mainSection %}

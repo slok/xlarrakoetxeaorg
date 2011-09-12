@@ -10,6 +10,10 @@ BASE_DIR = os.path.dirname(__file__)
 #If isn't enabled (False) then the def format is Markdown (although you can change in the format attribute) 
 ENABLE_DOJO_EDITOR= deploy.ENABLE_DOJO_EDITOR
 
+#Disqus settings
+DISQUS_API_KEY = deploy.DISQUS_API_KEY
+DISQUS_WEBSITE_SHORTNAME = deploy.DISQUS_WEBSITE_SHORTNAME
+
 DEBUG = deploy.DEBUG
 TEMPLATE_DEBUG = DEBUG
 
@@ -122,6 +126,7 @@ INSTALLED_APPS = (
     'django.contrib.admindocs',
     'django.contrib.flatpages',
     'django.contrib.markup',
+    'disqus',
     'blog',
     'tagging',
 )

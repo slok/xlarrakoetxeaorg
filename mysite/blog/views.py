@@ -2,6 +2,7 @@ from django.shortcuts import render_to_response
 from django.template import RequestContext
 from django.http import Http404
 from django.utils.translation import ugettext as _
+from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned 
 
 from mysite.blog import utils
 from mysite.blog.models import Entry
@@ -22,18 +23,18 @@ def blog_index(request):
 
 def blog_entry_detail(request, year, month, slug):
     
-    entries = Entry.published_objects.all().filter(slug=slug, pub_date__year = int(year), pub_date__month = int(month))
-    #There are no entries, so... 404 page not found
-    if not entries:
+    #There are no entries or are more than one: 404 page not found
+    
+    try:
+        entry = Entry.published_objects.get(slug=slug, pub_date__year = int(year), pub_date__month = int(month))
+    except (ObjectDoesNotExist, MultipleObjectsReturned):
         raise Http404
     
-    entries = utils.get_paginated_objects(entries, request) #temporary, is needed because the template needs a pagination object
-    
     data = { 
-        'entries' : entries,
+        'entry' : entry,
     }
    
-    return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
+    return render_to_response('blog/blog_entries_detail.html', data, context_instance=RequestContext(request))
 
 def blog_entries_month(request, year, month):
     
@@ -87,5 +88,3 @@ def tag_list(request):
     }
     
     return render_to_response('blog/tag_list.html', data, context_instance=RequestContext(request))
-
-
