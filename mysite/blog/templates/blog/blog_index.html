@@ -1,5 +1,6 @@
 {% extends "blog/blog.html" %}
 {% load readmorefilter %}
+{% load markup %}
  
 {% block mainSection %}
     <section id="main-section" class="grid_9">
@@ -7,20 +8,14 @@
         <article>
             <h3>{{entry.title}}</h3>
             </br>
-            {% if entry.format == html %}
+            {% if entry.entry_format == 'html' %}
             
                 {{entry.body|readmore:'<!--more-->'|safe}}
             
-                {% else %}{% if entry.format == md %}
+                {% else %}{% if entry.entry_format == 'md' %}
             
-                    {{entry.body|readmore:'<!--more-->'|safe}}
-            
-                    {% else %}{% if entry.format == rst %}
-            
-                        {{entry.body|readmore:'<!--more-->'|safe}}
+                    {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite'}}
                     
-                    {% endif %}
-                
                 {% endif %}
             
             {% endif %}
