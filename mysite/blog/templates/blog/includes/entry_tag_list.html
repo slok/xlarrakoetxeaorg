@@ -2,7 +2,7 @@
 <section class="entry-tag">
     <ul>
         {% for tag in tags %}
-        <li class="entry-tag"><a href="{% url blog.views.tag_detail tag.name %}">{{ tag.name }}</a></li>
+        <li class="entry-tag-list"><a href="{% url blog.views.tag_detail tag.name %}">{{ tag.name }}</a></li>
         {% endfor %}
     </ul>
 </section>

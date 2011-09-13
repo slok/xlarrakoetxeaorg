@@ -14,7 +14,7 @@
 	<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 	
-	<title>{% block title %}{% endblock %}</title>
+	<title>{% block title %} Xabier Larrakoetxea {% endblock %}</title>
 	
 	<meta name="title" content="">
 	<meta name="description" content="">
@@ -61,6 +61,10 @@
 
     <!-- 960 grid system -->
     <link rel="stylesheet" href="{{STATIC_URL}}css/960.css" />
+    
+    <!-- Google Fonts! -->
+    
+    <link href='http://fonts.googleapis.com/css?family=Droid+Sans' rel='stylesheet' type='text/css'>
 	
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
 	<script src="{{STATIC_URL}}js/modernizr-1.7.min.js"></script>
@@ -74,14 +78,14 @@
 
 	<header class="grid_12">
 		
-		<h1><a href="/">Page Title</a></h1>
+		<h1><a href="/">Xabier's Site</a></h1>
 		
-		<nav>
+		<nav class="navmenu">
 			<ul>
                 {% block navmenu %}
-				<li><a href="/blog" class="button">Blog</a></li>
-				<li><a href="/projects" class="button">Projects</a></li>
-				<li><a href="/about" class="button">About</a></li>
+				<li class="navmenu-list"><a href="/blog">Blog</a></li>
+				<li class="navmenu-list"><a href="/projects">Projects</a></li>
+				<li class="navmenu-list"><a href="/about" >About</a></li>
                 {% endblock navmenu %}
 			</ul>
 		</nav>
@@ -90,16 +94,21 @@
     
     <div class="clear"></div>
     
+    <section class="page-title grid_12">{% block pageTitle %}Title!{% endblock pageTitle%}</section>
+    
+    <div class="clear"></div>
+    
     <!-- Section not included because some are grid_9 and other grid_12-->
+    
     {% block mainSection %}
-    {% endblock %}
+    {% endblock mainSection%}
     
     {% block sidebar %}
     {% endblock sidebar%}
 	
      <div class="clear"></div>
     
-	<footer class="grid_12">
+	<footer class="footer-block grid_12">
 		
 		<p><small>&copy; Copyright Your Name Here 2011. All Rights Reserved.</small></p>
         {% block footer %} {% endblock footer %}

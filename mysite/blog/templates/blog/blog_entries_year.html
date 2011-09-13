@@ -1,2 +1,5 @@
-{% extends "blog/blog_entries.html" %}  
+{% extends "blog/blog_index.html" %}
+{% block title %} Xabier Larrakoetxea - Blog  {{entries_date|date:"Y"}} {% endblock %}
+
+{% block pageTitle %} Entries for  {{entries_date|date:"Y"}} {% endblock pageTitle %}  
  

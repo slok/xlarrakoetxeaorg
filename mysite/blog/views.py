@@ -4,6 +4,8 @@ from django.http import Http404
 from django.utils.translation import ugettext as _
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned 
 
+import datetime
+
 from mysite.blog import utils
 from mysite.blog.models import Entry
 
@@ -40,23 +42,28 @@ def blog_entries_month(request, year, month):
     
     entries = Entry.published_objects.all().filter(pub_date__year = int(year), pub_date__month = int(month))
     entries = utils.get_paginated_objects(entries, request)
+    date = datetime.datetime(int(year), int(month), 1)
     
     data = { 
         'entries' : entries,
+        'entries_date': date,
     }
     
-    return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
+    return render_to_response('blog/blog_entries_month.html', data, context_instance=RequestContext(request))
 
 def blog_entries_year(request, year):
     
     entries = Entry.published_objects.all().filter(pub_date__year = int(year))
     entries = utils.get_paginated_objects(entries, request)
     
+    date = datetime.datetime(int(year), 1, 1)
+    
     data = { 
         'entries' : entries,
+        'entries_date' : date,
     }
     
-    return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
+    return render_to_response('blog/blog_entries_year.html', data, context_instance=RequestContext(request))
 
 def tag_detail(request, slug):
     

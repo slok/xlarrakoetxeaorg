@@ -11,11 +11,11 @@
         <a href="?page={{ entries.next_page_number }}">next</a>
     {% endif %}-->
     {% if entries.has_previous %}
-        <a style="float: right; clear: right;" href="?page={{ entries.previous_page_number }}">Newer entries</a>
+        <a class="pagination" style="float: right; clear: right;" href="?page={{ entries.previous_page_number }}">Newer entries</a>
     {% endif %}
     
     {% if entries.has_next %}
-        <a href="?page={{ entries.next_page_number }}">Older entries</a>
+        <a class="pagination" href="?page={{ entries.next_page_number }}">Older entries</a>
     {% endif %}
 
 </section> 

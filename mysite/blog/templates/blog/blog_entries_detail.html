@@ -3,11 +3,12 @@
 {% load markup %}
 {% load disqus_tags %}
 
+{% block pageTitle %} <h3>{{entry.title}}</h3> {% endblock pageTitle %} 
+
 {% block mainSection %}
     <section id="main-section" class="grid_12">
         <article>
             <section class="entry">
-                <h3>{{entry.title}}</h3>
                 </br>
                 {% if entry.entry_format == 'html' %}
                 
@@ -20,11 +21,13 @@
                     {% endif %}
                 {% endif %}
                 </br></br>
+                <section class="entry-date">
                 by: {{entry.author.username}} on {{entry.pub_date}}
+                </section>
                 {% entry_tags entry %}
             </section>
             </br>
-            <div class="clear"></div>
+
             <section class="comments">
                 <h2 class="section-title">comments</h2>
                 {% if entry.allow_comments %}
