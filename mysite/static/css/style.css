@@ -219,6 +219,41 @@ html{
     background-image:url('../img/bright_squares.png');
     }
 /* Dark Button CSS */
+li.entry-tag {
+
+    display:inline;
+    float:left;
+    font-weight:normal;
+    padding-right:10px;
+    text-align:center;
+    
+	-moz-border-radius:10px;
+    -webkit-border-radius:10px;
+    border-radius:10px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    background-image: -moz-linear-gradient(top, #fff0ed, #575652);
+    background-image: -webkit-gradient(linear, center top, center bottom, from(#fff0ed), to(#575652));
+    background-image: -o-linear-gradient(top, #fff0ed, #575652);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ed', endColorstr='#575652');
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff0ed', endColorstr='#575652')";
+    /*Element must have a height (not auto)*/
+    /*All filters must be placed together*/
+    background-image: linear-gradient(top, #fff0ed, #575652);
+    -moz-background-clip: padding-box;
+    -webkit-background-clip: padding-box;
+    background-clip: padding-box;
+    /*Use "background-clip: padding-box" when using rounded corners to avoid the gradient bleeding through the corners*/
+    /*--IE9 WILL PLACE THE FILTER ON TOP OF THE ROUNDED CORNERS--*/
+
+}
+
+
+
+}
+
 .button {
     outline: 0;
     padding: 5px 12px;

@@ -1,4 +1,5 @@
-{% extends "blog/blog_entries.html" %}  
+{% extends "blog/blog.html" %}  
+{% load taggingtags %}
 {% load markup %}
 {% load disqus_tags %}
 
@@ -20,13 +21,15 @@
                 {% endif %}
                 </br></br>
                 by: {{entry.author.username}} on {{entry.pub_date}}
+                {% entry_tags entry %}
             </section>
             </br>
             <div class="clear"></div>
             <section class="comments">
                 <h2 class="section-title">comments</h2>
                 {% if entry.allow_comments %}
-                    {% disqus_dev %} <!-- BUG! if devel is enabled then the comments are for all the page not for each article, so we put again disqus_url-->
+                    {% disqus_dev %} <!-- BUG! if devel is enabled then the comments are for all the page not for each article, so we put again disqus_url and disqus_identifier-->
+                    {% set_disqus_identifier 'blog_entry_' entry.id%}
                     {% set_disqus_url entry.get_absolute_url %}
                     {% disqus_show_comments %}
                 {% else %}

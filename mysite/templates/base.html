@@ -64,6 +64,7 @@
 	
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
 	<script src="{{STATIC_URL}}js/modernizr-1.7.min.js"></script>
+    {% block head %}{% endblock head %}
 
 </head>
 
@@ -89,6 +90,7 @@
     
     <div class="clear"></div>
     
+    <!-- Section not included because some are grid_9 and other grid_12-->
     {% block mainSection %}
     {% endblock %}
     
@@ -100,7 +102,7 @@
 	<footer class="grid_12">
 		
 		<p><small>&copy; Copyright Your Name Here 2011. All Rights Reserved.</small></p>
-		
+        {% block footer %} {% endblock footer %}
 	</footer>
 
 </div>

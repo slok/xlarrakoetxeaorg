@@ -1,11 +1,12 @@
-{% extends "blog/blog.html" %}
+{% extends "blog/blog.html" %}  
 {% load readmorefilter %}
 {% load markup %}
+{% load taggingtags %}
  
 {% block mainSection %}
     <section id="main-section" class="grid_9">
     {%for entry in entries.object_list%}
-        <article>
+        <article class="entry">
             <h3><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a>
             </br>
             {% if entry.entry_format == 'html' %}
@@ -21,13 +22,17 @@
             {% endif %}
             </br></br>
             by: {{entry.author.username}} on {{entry.pub_date}}
+            {% entry_tags entry %}
         </article>
     </br>
     
     {% endfor %}
     {%  include "blog/includes/paginationFooter.html"%}
     </section>
-
-
 {% endblock mainSection %}
 
+{% block sidebar %}
+    <aside class="grid_3">
+        <h2>Sidebar Content</h2>
+    </aside>
+{% endblock sidebar%}
