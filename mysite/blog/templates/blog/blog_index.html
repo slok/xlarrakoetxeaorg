@@ -6,10 +6,11 @@
 {% block pageTitle %} Welcome to the blog{% endblock pageTitle %}
  
 {% block mainSection %}
-    <section class="main-section grid_9">
+    <section class="main-section grid_9 aplha">
+    <div class="special-div">
     {%for entry in entries.object_list%}
         <article class="entry ">
-            <h3><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a>
+            <h3><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h3>
             </br>
             {% if entry.entry_format == 'html' %}
             
@@ -32,11 +33,14 @@
     {% endfor %}
     
     {%  include "blog/includes/paginationFooter.html"%}
+    </div><!--special-div-->
     </section>
 {% endblock mainSection %}
 
 {% block sidebar %}
-    <aside class="side-block grid_3">
+    <aside class="side-block grid_3 omega">
+        <div class="special-div">
         <h2>Sidebar Content</h2>
+        </div>
     </aside>
 {% endblock sidebar%}

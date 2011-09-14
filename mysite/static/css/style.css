@@ -190,7 +190,7 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 }
 
 /*
- * Custom classes to replace in the html
+ * Custom classes to replace in the html (Maybe I miss some :S)
  * ------------------------------------------
  * .navmenu: the navigation menu class 
  * li.navmenu: each button of the nav menu
@@ -200,6 +200,7 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
  * .entry: an entry block (blog post) 
  * .side-block: the block in the side (in this one for now in the right)
  * .footer-block: the block in the bottom 
+ * .entry-date: the date of the entry block
  * .comments: the comments block
  * .pagination: pagination block section
  * a.pagination: each pagination link
@@ -210,72 +211,62 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
  */
  
 
-.navmenu {
-    width: 100%;
-	float: left;
-	margin: 0 0 3em 0;
-	list-style: none;
+.entry-date,
+.menu-tag,
+li.menu-tag-list,
+.comments,
+.entry,
+.entry-tag,
+li.entry-tag-list,
+.pagination{
+    padding:5px;
     border:solid 1px #1d56ab;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    padding: 5px;
-    } 
+    }
+    
+
 li.navmenu-list {
     float: left;
+    padding:2px;
+    margin: 1px;
     border:solid 1px #1d56ab;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    padding: 5px; 
     }
+
+/*----------------------------------*/
+/* The ones that use special-div*/
+ 
+ .navmenu {
+    width: 100%;
+	list-style: none;
+    margin: 5px;
+    } 
+ 
 .page-title {
-    border:solid 1px #1d56ab;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
     font-family: 'Droid Sans', sans-serif;
     font-weight: bold;
     font-size:250%;
-    padding: 5px;
+    margin: 5px;
     } 
 
-.entry-tag {
-     border:solid 1px #1d56ab;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-   /* display:inline;
-    font-weight:normal;
-    padding: 5px;*/
-    } 
-li.entry-tag-list {
-     border:solid 1px #1d56ab;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    /*float:left;*/
-    padding: 5px;
-    
-    }
-.entry,
-.main-section,
-.entry,
+.logo,
 .side-block,
 .footer-block,
-.comments,
-.pagination,
-.menu-tag,
-.entry-date,
-li.menu-tag-list {
-     border:solid 1px #1d56ab;
-    -moz-border-radius: 0px;
-    -webkit-border-radius: 0px;
-    border-radius: 0px;
-    padding: 5px;
-    } 
+.main-section{
+    margin: 5px;
+    }
+/*----------------------------------*/
+/*This is used to solve the problem with grid 960 and the padding. Solution from: http://divitodesign.com/css/tricks-to-solve-960-css-framework-problems/
+ * 
+ * We have tu use it every time that wqe use padding and grid_xx (put after grid_xx class block)
+ * 
+ **/
+div.special-div{
+    padding:5px;
+    border:solid 1px #1d56ab;
+
+}
 
 /*------------------*/
 html{
     background-image:url('../img/bright_squares.png');
     }
+

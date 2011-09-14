@@ -76,28 +76,37 @@
 
 <div class="wrapper container_12"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
-	<header class="grid_12">
-		
-		<h1><a href="/">Xabier's Site</a></h1>
-		
-		<nav class="navmenu">
-			<ul>
-                {% block navmenu %}
-				<li class="navmenu-list"><a href="/blog">Blog</a></li>
-				<li class="navmenu-list"><a href="/projects">Projects</a></li>
-				<li class="navmenu-list"><a href="/about" >About</a></li>
-                {% endblock navmenu %}
-			</ul>
-		</nav>
-	
+	<header>
+<!--*********************************************************************-->
+        <section class="logo grid_4">
+            <div class="special-div">
+            <h1><a href="/">Xabier's Site</a></h1>
+            </div>
+        </section>
+        <div class="clear"></div>
+<!--*********************************************************************-->        
+            <nav class="navmenu grid_12">
+                <div class="special-div">
+                    <ul>
+                        {% block navmenu %}
+                        <li class="navmenu-list"><a href="/blog">Blog</a></li>
+                        <li class="navmenu-list"><a href="/projects">Projects</a></li>
+                        <li class="navmenu-list"><a href="/about" >About</a></li>
+                        {% endblock navmenu %}
+                    </ul>
+                </div>
+            </nav>
+        <div class="clear"></div>        
 	</header>
+<!--*********************************************************************-->
     
+    <section class="page-title grid_12">
+        <div class="special-div">
+        {% block pageTitle %}Title!{% endblock pageTitle%}
+        </div>
+    </section>
     <div class="clear"></div>
-    
-    <section class="page-title grid_12">{% block pageTitle %}Title!{% endblock pageTitle%}</section>
-    
-    <div class="clear"></div>
-    
+<!--*********************************************************************-->
     <!-- Section not included because some are grid_9 and other grid_12-->
     
     {% block mainSection %}
@@ -107,13 +116,14 @@
     {% endblock sidebar%}
 	
      <div class="clear"></div>
-    
+<!--*********************************************************************-->
 	<footer class="footer-block grid_12">
-		
+        <div class="special-div">
 		<p><small>&copy; Copyright Your Name Here 2011. All Rights Reserved.</small></p>
         {% block footer %} {% endblock footer %}
-	</footer>
-
+        </div>
+    </footer>
+    <div class="clear"></div>
 </div>
 
 <!-- here comes the javascript -->
