@@ -2,6 +2,7 @@
 {% load readmorefilter %}
 {% load markup %}
 {% load taggingtags %}
+{% load archivetags %}
  
 {% block pageTitle %} Welcome to the blog{% endblock pageTitle %}
  
@@ -40,7 +41,8 @@
 {% block sidebar %}
     <aside class="side-block grid_3 omega">
         <div class="special-div">
-        <h2>Sidebar Content</h2>
+        {% archive_dates %}
+        {% side_tag_list %}
         </div>
     </aside>
 {% endblock sidebar%}

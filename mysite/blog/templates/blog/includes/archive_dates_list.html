@@ -1,0 +1,12 @@
+{% if archive_dates %}
+<section class="archive-dates">
+    <h2>Archive</h2>
+    <ul>
+        {% for date in archive_dates %}
+        <li class="archive-dates-list"><a href="{% url blog.views.blog_entries_month date|date:'Y', date|date:'m' %}">{{ date|date:"F Y" }}</a></li>
+        {% endfor %}
+    </ul>
+</section>
+{% else %}
+    <p>No archives</p>
+{% endif %} 

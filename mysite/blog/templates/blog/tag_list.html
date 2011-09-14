@@ -1,11 +1,17 @@
 {% extends "blog/blog.html" %}
 
+{% block pageTitle %} Cloud tags{% endblock pageTitle %}
+
 {% block mainSection %}
+    <section class="main-section grid_12">
+    <div class="special-div">
     {% if tag_cloud %}
-        <p class="tagCloud">
+        <p class="tag-cloud">
         {% for tag in tag_cloud %}
             <a href="{% url blog.views.tag_detail tag.name%}" style="font-size: {{ tag.font_size }}em;">{{ tag.name }}</a>
         {% endfor %}
         </p>
     {% endif %}
+    </div>
+    </section>
 {% endblock mainSection %}

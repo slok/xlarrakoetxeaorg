@@ -209,11 +209,14 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
  * .menu-tag: tags in the menu
  * li.menu-tag: earch tag in the menu
  */
- 
 
+li.side-tag-list,
+.side-tag,
+.tag-cloud,
+.archive-dates,
+.archive-dates-list,
+.tag-cloud,
 .entry-date,
-.menu-tag,
-li.menu-tag-list,
 .comments,
 .entry,
 .entry-tag,
@@ -246,6 +249,9 @@ li.navmenu-list {
     font-size:250%;
     margin: 5px;
     } 
+.logo{
+    font-size:300%;
+}
 
 .logo,
 .side-block,
