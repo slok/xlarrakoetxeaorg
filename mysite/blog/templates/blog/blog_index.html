@@ -3,6 +3,7 @@
 {% load markup %}
 {% load taggingtags %}
 {% load archivetags %}
+{% load disqus_tags %}
  
 {% block pageTitle %} Welcome to the blog{% endblock pageTitle %}
  
@@ -27,6 +28,8 @@
             </br></br>
             <section class="entry-date">
             by: {{entry.author.username}} on {{entry.pub_date}}
+            <a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a>
+            {% disqus_num_replies %}
             </section>
             {% entry_tags entry %}
         </article>

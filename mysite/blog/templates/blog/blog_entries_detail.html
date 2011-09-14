@@ -23,7 +23,7 @@
                 {% endif %}
                 </br></br>
                 <section class="entry-date">
-                by: {{entry.author.username}} on {{entry.pub_date}}
+                by: {{entry.author.username}} on <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date}}</a>
                 </section>
                 {% entry_tags entry %}
             </section>
