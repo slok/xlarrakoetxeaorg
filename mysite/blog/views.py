@@ -3,6 +3,7 @@ from django.template import RequestContext
 from django.http import Http404
 from django.utils.translation import ugettext as _
 from django.core.exceptions import ObjectDoesNotExist, MultipleObjectsReturned 
+from django.contrib.auth.models import User
 
 import datetime
 
@@ -83,6 +84,7 @@ def tag_detail(request, slug):
     
     data = { 
         'entries' : entries,
+        'tag': tag_instance,
     }
     
     return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
@@ -95,3 +97,37 @@ def tag_list(request):
     }
     
     return render_to_response('blog/tag_list.html', data, context_instance=RequestContext(request))
+
+def author_detail(request, author):
+    
+    try:
+        author = User.objects.get(username = author)
+    except (ObjectDoesNotExist, MultipleObjectsReturned):
+        raise Http404
+        
+    queryset = Entry.published_objects.all().filter(author=author)
+    entries = utils.get_paginated_objects(queryset, request, 10)
+    data = { 
+        'author' : author,
+        'entries': entries,
+    }
+    
+    return render_to_response('blog/blog_index.html', data, context_instance=RequestContext(request))
+
+
+def author_list(request):
+    
+    authors = User.objects.all()
+    author_list = []
+    
+    # Create list with authors tuple: (username, number of entries)
+    for author in authors:
+        aux_author = (author.username, Entry.published_objects.all().filter(author=author).count() ) 
+        author_list.append(aux_author)
+    
+    data = { 
+        'authors' : author_list,
+    }
+    
+    return render_to_response('blog/author_list.html', data, context_instance=RequestContext(request))
+

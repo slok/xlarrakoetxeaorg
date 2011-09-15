@@ -1,0 +1,19 @@
+{% extends "blog/blog.html" %}
+
+{% block pageTitle %} Cloud tags{% endblock pageTitle %}
+
+{% block mainSection %}
+    <section class="main-section grid_12">
+    <div class="special-div">
+    {% if authors %}
+        <section class="authors">
+            <ul>
+            {% for author in authors %}
+                <li class="authors-list"><a href="{% url blog.views.author_detail author.0 %}">{{ author.0 }} ({{author.1}})</a></li>
+            {% endfor %}
+            </ul>
+        </section>
+    {% endif %}
+    </div>
+    </section>
+{% endblock mainSection %}

@@ -12,4 +12,7 @@ urlpatterns = patterns('',
 
     url(r'^tags/(?P<slug>[-\w]+)/$', views.tag_detail),
     url(r'^tags/$', views.tag_list),
+    
+    url(r'^authors/(?P<author>[-\w]+)/$', views.author_detail),
+    url(r'^authors/$', views.author_list),
 ) 

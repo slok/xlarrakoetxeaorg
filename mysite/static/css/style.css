@@ -215,7 +215,6 @@ li.side-tag-list,
 .tag-cloud,
 .archive-dates,
 .archive-dates-list,
-.tag-cloud,
 .entry-date,
 .comments,
 .entry,
@@ -225,7 +224,7 @@ li.entry-tag-list,
     padding:5px;
     }
     
-
+li.entry-tag-list,
 li.navmenu-list {
     float: left;
     padding:2px;
@@ -235,15 +234,15 @@ li.navmenu-list {
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * The ones that use special-div
  * */
- 
- .navmenu {
-    width: 100%;
+.entry-tag, 
+.navmenu {
 	list-style: none;
     margin: 5px;
+    padding-bottom: 10px;
     } 
  
 .page-title {
-    font-family: 'Julee', cursive;
+    font-family: 'Passero One', cursive;
     font-weight: bold;
     font-size:250%;
     margin: 5px;
@@ -272,6 +271,7 @@ div.special-div{
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Put border (for design porpouses) in the same place, that way if we want to commented we doit in one time
 */
+li.authors-list
 li.side-tag-list,
 .side-tag,
 .tag-cloud,
@@ -294,13 +294,16 @@ div.special-div{
  */
 html{
     /*background-image:url('../img/bright_squares.png');*/
-    background-color: #F2E6B6;
-    }
+    background-color: #588EA3;
 
+    }
+    
+.authors,
+.tag-cloud,
 .comments,
 .side-block,
 .entry{
-    background-color:#ffffff;
+    background-color:#E8D3AB;
     border-width:4px;
     border-color:#363636;
     -moz-border-radius:2px 31px;
@@ -317,7 +320,7 @@ html{
     /*Element should have a background-color*/
     /*All filters must be placed together*/
     /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-    opacity:0.52;
+    opacity:1.0;
     -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=52);
     /*-ms-filter must come before filter*/
     filter: alpha(opacity=52);
@@ -361,8 +364,21 @@ pre{
 }
 .logo a{
     font-family: 'Aldrich', sans-serif;
-    color: #000000; 
+    color: #e1e1e1; 
 }
 .logo a:hover{
-    color: #;
+    color: #ababab;
 }
+
+.pagination a,
+.navmenu,
+.entry-author span,
+.entry-date a{
+    background-color:#bababa;
+}
+.twitter-share-button,
+.google-plusone-button{
+    float: left; 
+
+}
+

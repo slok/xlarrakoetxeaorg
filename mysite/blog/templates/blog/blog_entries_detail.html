@@ -2,6 +2,8 @@
 {% load taggingtags %}
 {% load markup %}
 {% load disqus_tags %}
+{% load tweetertags %}
+{% load googletags %}
 
 {% block pageTitle %} <h3>{{entry.title}}</h3> {% endblock pageTitle %} 
 
@@ -10,7 +12,14 @@
         <div class="special-div">
         <article>
             <section class="entry">
-                </br>
+                <section class="entry-date">
+                    <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date|date:'l, F d, Y'}}</a>
+                </section>
+                <section class="share-buttons">
+                    {% tweet_button 'sLoK69' 'horizontal' %}
+                    {% plus_one_button %}
+                </section>
+                </br> </br>
                 {% if entry.entry_format == 'html' %}
                 
                     {{entry.body|safe}}
@@ -22,8 +31,8 @@
                     {% endif %}
                 {% endif %}
                 </br></br>
-                <section class="entry-date">
-                by: {{entry.author.username}} on <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date}}</a>
+                <section class="entry-author">
+                    <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
                 </section>
                 {% entry_tags entry %}
             </section>
