@@ -1,13 +1,44 @@
 {% extends "base.html" %} 
+{% load markup %}
+{% load taggingtags %}
+{% load disqus_tags %}
+
 {% block title %} Xabier Larrakoetxea {% endblock %}
+
+{% block pageTitle %}Latest entries {% endblock pageTitle %}
+
 {% block mainSection %}
 <section class="main-section grid_12">
-    <div class="special-div">
-     GNU/Linux es uno de los términos empleados para referirse a la combinación del núcleo o kernel libre similar a Unix denominado Linux, que es usado con herramientas de sistema GNU. Su desarrollo es uno de los ejemplos más prominentes de software libre; todo su código fuente puede ser utilizado, modificado y redistribuido libremente por cualquiera bajo los términos de la GPL (Licencia Pública General de GNU, en inglés: General Public License) y otra serie de licencias libres.1
-
-A pesar de que Linux es, en sentido estricto, el sistema operativo,2 parte fundamental de la interacción entre el núcleo y el usuario (o los programas de aplicación) se maneja usualmente con las herramientas del proyecto GNU o de otros proyectos como GNOME. Sin embargo, una parte significativa de la comunidad, así como muchos medios generales y especializados, prefieren utilizar el término Linux para referirse a la unión de ambos proyectos. Para más información consulte la sección "Denominación GNU/Linux" o el artículo "Controversia por la denominación GNU/Linux".
-
-A las variantes de esta unión de programas y tecnologías, a las que se les adicionan diversos programas de aplicación de propósitos específicos o generales se las denomina distribuciones. Su objetivo consiste en ofrecer ediciones que cumplan con las necesidades de un determinado grupo de usuarios. Algunas de ellas son especialmente conocidas por su uso en servidores y supercomputadoras.3 donde tiene la cuota más importante del mercado. Según un informe de IDC, GNU/Linux es utilizado por el 78% de los principales 500 servidores del mundo,4 otro informe le da una cuota de mercado de 89% en los 500 mayores supercomputadores.5 Con menor cuota de mercado el sistema GNU/Linux también es usado en el segmento de las computadoras de escritorio, portátiles, computadoras de bolsillo, teléfonos móviles, sistemas embebidos, videoconsolas y otros dispositivos.
-    </div><!--special-div-->
+    
+    {%for entry in entries %}
+        <article class="entry ">
+            <h3><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h3>
+            </br>
+            {% if entry.entry_format == 'html' %}
+            
+                {{entry.body|safe|truncatewords:20}}
+            
+                {% else %}{% if entry.entry_format == 'md' %}
+            
+                    {{entry.body|markdown:'safe,codehilite'|truncatewords:20}}
+                    
+                {% endif %}
+            
+            {% endif %}
+            </br></br>
+            <section class="entry-date">
+            by: {{entry.author.username}} on {{entry.pub_date}}
+            <a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a>
+            {% disqus_num_replies %}
+            </section>
+            {% entry_tags entry %}
+        </article>
+        </br>
+    {% endfor %}
 </section>
+
+<section class="page-title grid_12">
+    <div class="special-div">Twitter</div>
+</section>
+<div class="clear"></div>
 {% endblock mainSection %}

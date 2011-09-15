@@ -191,7 +191,7 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 
 /*
  * Custom classes to replace in the html (Maybe I miss some :S)
- * ------------------------------------------
+ *------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * .navmenu: the navigation menu class 
  * li.navmenu: each button of the nav menu
  * .page-title: the title page
@@ -223,7 +223,6 @@ li.side-tag-list,
 li.entry-tag-list,
 .pagination{
     padding:5px;
-    border:solid 1px #1d56ab;
     }
     
 
@@ -231,11 +230,11 @@ li.navmenu-list {
     float: left;
     padding:2px;
     margin: 1px;
-    border:solid 1px #1d56ab;
     }
 
-/*----------------------------------*/
-/* The ones that use special-div*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * The ones that use special-div
+ * */
  
  .navmenu {
     width: 100%;
@@ -244,7 +243,7 @@ li.navmenu-list {
     } 
  
 .page-title {
-    font-family: 'Gloria Hallelujah', cursive;
+    font-family: 'Julee', cursive;
     font-weight: bold;
     font-size:250%;
     margin: 5px;
@@ -259,20 +258,111 @@ li.navmenu-list {
 .main-section{
     margin: 5px;
     }
-/*----------------------------------*/
-/*This is used to solve the problem with grid 960 and the padding. Solution from: http://divitodesign.com/css/tricks-to-solve-960-css-framework-problems/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ *This is used to solve the problem with grid 960 and the padding. Solution from: http://divitodesign.com/css/tricks-to-solve-960-css-framework-problems/
  * 
  * We have tu use it every time that wqe use padding and grid_xx (put after grid_xx class block)
  * 
  **/
 div.special-div{
     padding:5px;
-    border:solid 1px #1d56ab;
 
 }
 
-/*------------------*/
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Put border (for design porpouses) in the same place, that way if we want to commented we doit in one time
+*/
+li.side-tag-list,
+.side-tag,
+.tag-cloud,
+.archive-dates,
+.archive-dates-list,
+.tag-cloud,
+.entry-date,
+.comments,
+.entry,
+.entry-tag,
+li.entry-tag-list,
+.pagination,
+li.navmenu-list,
+div.special-div{
+    /*border:solid 1px #1d56ab;*/
+}
+
+/*------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ * Design :D
+ */
 html{
-    background-image:url('../img/bright_squares.png');
+    /*background-image:url('../img/bright_squares.png');*/
+    background-color: #F2E6B6;
     }
 
+.comments,
+.side-block,
+.entry{
+    background-color:#ffffff;
+    border-width:4px;
+    border-color:#363636;
+    -moz-border-radius:2px 31px;
+    -webkit-border-radius:2px 31px 2px 31px;/*This is the correct shorthand for webkit*/
+    border-radius:2px 31px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow:5px 5px 7px #000000;
+    -webkit-box-shadow:5px 5px 7px #000000;
+    box-shadow:5px 5px 7px #000000;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
+    /*Shadows look very different in IE (Only cardinal directions supported)*/
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element should have a background-color*/
+    /*All filters must be placed together*/
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    opacity:0.52;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=52);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity=52);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+
+}
+
+.page-title{
+    background-color:#ffffff;
+    border-width:4px;
+    border-color:#363636;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow:5px 5px 7px #000000;
+    -webkit-box-shadow:5px 5px 7px #000000;
+    box-shadow:5px 5px 7px #000000;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
+    /*Shadows look very different in IE (Only cardinal directions supported)*/
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element should have a background-color*/
+    /*All filters must be placed together*/
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    opacity:0.62;
+    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=62);
+    /*-ms-filter must come before filter*/
+    filter: alpha(opacity=62);
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*All filters must be placed together*/
+
+}
+pre{
+    background-color:#bababa;
+    border:solid 1px #000000;
+    padding:10px;
+    border-radius:5px;
+
+}
+.logo a{
+    font-family: 'Aldrich', sans-serif;
+    color: #000000; 
+}
+.logo a:hover{
+    color: #;
+}
