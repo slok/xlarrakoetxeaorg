@@ -1,6 +1,6 @@
 from django.conf.urls.defaults import patterns, include, url
-
 from blog import views
+
 
 urlpatterns = patterns('',
     
@@ -15,4 +15,6 @@ urlpatterns = patterns('',
     
     url(r'^authors/(?P<author>[-\w]+)/$', views.author_detail),
     url(r'^authors/$', views.author_list),
+    
+    url(r'^search/', include('haystack.urls')),
 ) 

@@ -4,7 +4,11 @@ ENABLE_DOJO_EDITOR = True
 DISQUS_API_KEY = ''
 DISQUS_WEBSITE_SHORTNAME = ''
 
-TWITTER_BUTTON_ACCOUNTS = ('',) # Can be one or two, no more
+TWITTER_BUTTON_ACCOUNTS = ('sLoK69',) # Can be one or two, no more 
+
+HAYSTACK_SITECONF = 'mysite.search_sites'
+HAYSTACK_SEARCH_ENGINE = 'whoosh'   # options: whoosh, solr, xapian 
+HAYSTACK_WHOOSH_PATH = '/home/xxxxxx/mysite_index' # the file where all the indexed information is stored
 
 DEBUG = True
 

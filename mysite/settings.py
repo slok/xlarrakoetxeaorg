@@ -17,6 +17,11 @@ DISQUS_WEBSITE_SHORTNAME = deploy.DISQUS_WEBSITE_SHORTNAME
 #Tweeter settings
 TWITTER_BUTTON_ACCOUNTS = deploy.TWITTER_BUTTON_ACCOUNTS
 
+#Seach configuration (Haystack)
+HAYSTACK_SITECONF = deploy.HAYSTACK_SITECONF
+HAYSTACK_SEARCH_ENGINE = deploy.HAYSTACK_SEARCH_ENGINE
+HAYSTACK_WHOOSH_PATH = deploy.HAYSTACK_WHOOSH_PATH
+
 
 DEBUG = deploy.DEBUG
 TEMPLATE_DEBUG = DEBUG
@@ -133,6 +138,7 @@ INSTALLED_APPS = (
     'disqus',
     'blog',
     'tagging',
+    'haystack',
 )
 
 # A sample logging configuration. The only tangible logging

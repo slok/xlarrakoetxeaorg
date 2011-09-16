@@ -3,3 +3,5 @@ django-tagging==0.3.1
 markdown==2.0.3
 pygments==1.4
 django-disqus==0.4.1
+Whoosh==2.2.2
+django-haystack==1.2.5
