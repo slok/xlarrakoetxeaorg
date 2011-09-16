@@ -4,6 +4,8 @@ ENABLE_DOJO_EDITOR = True
 DISQUS_API_KEY = ''
 DISQUS_WEBSITE_SHORTNAME = ''
 
+TWITTER_BUTTON_ACCOUNTS = ('',) # Can be one or two, no more
+
 DEBUG = True
 
 ADMINS = (

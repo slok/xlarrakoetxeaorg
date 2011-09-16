@@ -33,8 +33,11 @@ def blog_entry_detail(request, year, month, slug):
     except (ObjectDoesNotExist, MultipleObjectsReturned):
         raise Http404
     
+    url = request.build_absolute_uri()
+    
     data = { 
         'entry' : entry,
+        'url': url,
     }
    
     return render_to_response('blog/blog_entries_detail.html', data, context_instance=RequestContext(request))

@@ -16,7 +16,7 @@
                     <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date|date:'l, F d, Y'}}</a>
                 </section>
                 <section class="share-buttons">
-                    {% tweet_button 'sLoK69' 'horizontal' %}
+                    {% tweet_button 'horizontal' %}
                     {% plus_one_button %}
                 </section>
                 </br> </br>
@@ -43,7 +43,7 @@
                 {% if entry.allow_comments %}
                     {% disqus_dev %} <!-- BUG! if devel is enabled then the comments are for all the page not for each article, so we put again disqus_url and disqus_identifier-->
                     {% set_disqus_identifier 'blog_entry_' entry.id%}
-                    {% set_disqus_url entry.get_absolute_url %}
+                    {% set_disqus_url url %}
                     {% disqus_show_comments %}
                 {% else %}
                     <h3>Comments have been closed for this entry.</h3>
