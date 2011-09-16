@@ -21,21 +21,6 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 	vertical-align: baseline;
 	/*Original background*/
     background: transparent;
-    
-    /*Carbon fibre background*/
-    /*background:
-      -moz-linear-gradient(63deg, #151515 5px, transparent 5px) 0 5px,
-      -moz-linear-gradient(243deg, #151515 5px, transparent 5px) 10px 0px,
-      -moz-linear-gradient(63deg, #222 5px, transparent 5px) 0px 10px,
-      -moz-linear-gradient(243deg, #222 5px, transparent 5px) 10px 5px,
-      -moz-linear-gradient(0deg, #1b1b1b 10px, transparent 10px),
-      -moz-linear-gradient(#1d1d1d 25%, #1a1a1a 25%, #1a1a1a 50%, transparent 50%, transparent 75%, #242424 75%, #242424);
-    background-color: #131313;
-    background-size: 20px 20px;*/
-    
-    /*Stripes background*/
-    /*background-color: gray;
-    background-image: -moz-repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255,255,255,.5) 35px, rgba(255,255,255,.5) 70px);*/
 }									
 
 article, aside, figure, footer, header, hgroup, nav, section {display: block;}
@@ -209,7 +194,7 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
  * .menu-tag: tags in the menu
  * li.menu-tag: earch tag in the menu
  */
-
+.search,
 li.side-tag-list,
 .side-tag,
 .tag-cloud,
@@ -249,6 +234,7 @@ li.navmenu-list{
     font-weight: bold;
     font-size:250%;
     margin: 5px;
+    color: #41565e;
     } 
 .logo{
     font-size:300%;
@@ -303,7 +289,7 @@ html{
     /*background-image:url('../img/bright_squares.png');*/
     background-color: #588EA3;
     }
-    
+.search,    
 .authors,
 .tag-cloud,
 .comments,
@@ -335,8 +321,12 @@ html{
 
 }
 
+.entry{
+    padding: 15px;
+}
+
 .page-title{
-    background-color:#ffffff;
+    background-color:#BFD4DC;
     border-width:4px;
     border-color:#363636;
     -moz-border-radius:20px;
@@ -353,42 +343,86 @@ html{
     /*Element should have a background-color*/
     /*All filters must be placed together*/
     /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-    opacity:0.62;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=62);
-    /*-ms-filter must come before filter*/
-    filter: alpha(opacity=62);
-    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-    /*All filters must be placed together*/
 
 }
 
-code,
-pre{
-    background-color:#dcdcdc;
-    border:solid 1px #bababa;
-    padding:10px;
-    font-family:monospace;
-    font-size: 12px;
-}
+
 
 code{
     padding: 1px;
 }
 
+
+
 .logo a{
-    font-family: 'Changa One', sans-serif;
-    color: #456F7F;
-    text-shadow: 1px 1px 0px #bad3ed; 
-    opacity:1.0;
+	font-size:60px;
+	font-family: 'Neuton', serif;
+	color: #CFDFE8;
+	text-shadow: 1px 3px 5px #000000;
+    text-decoration: none;
 }
-.logo a:hover{
-    color: #dcdcdc;
+.logo a:hover {
+	color: #CFDFE8;
+	text-shadow: 8px 8px 10px #000000;
 }
 
-.pagination a,
-.entry-author span{
+
+
+
+.pagination a{
     background-color:#bababa;
 }
+
+
+.entry-tag li,
+.entry-author span{
+    background-color:#588EA3;
+    border-width:4px;
+    border-color:#363636;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    margin-left: 20px;
+    padding: 4px;
+    padding-left: 10px;
+    padding-right: 10px;
+    
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow:inset 5px 5px 7px #000000;
+    -webkit-box-shadow:inset 5px 5px 7px #000000;
+    box-shadow:inset 5px 5px 7px #000000;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
+
+    color: #E8D3AB;
+}
+
+code,
+pre{
+    background-color:#CFDFE8;
+    border:solid 1px #68838E;
+    font-family:monospace;
+    font-size: 12px;
+    padding: 15px;
+    margin: 10px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+}
+code{
+    padding:5px;
+    margin: 1px;
+}
+
+
+.entry-tag{
+    margin-bottom: 20px;
+}
+
+.entry-author {
+    margin-bottom: 5px;
+}
+
 .twitter-share-button,
 .google-plusone-button{
     float: left; 
@@ -401,9 +435,20 @@ code{
 	font-weight: 300;
     text-decoration:none;
 }
+.entry-tag a:hover,
+.entry-author a:hover,
 .entry-date a:hover,
 .title a:hover{
     text-decoration:underline;
+}
+
+.entry-tag a,
+.entry-author a{
+    
+    color: #E2D59B;
+    text-decoration:none;
+    font-weight:bold;
+    
 }
 .entry-date a{
     font-size: 11px;
@@ -414,55 +459,52 @@ code{
 
 
 /*-------------------------------------------------------------------
- *Navmenu Button stiles 
- * Commented: Use css3 github buttons (https://github.com/necolas/css3-github-buttons);) 
+ *Navmenu Button styles 
  */
  
-/* 
+ 
 .button{
+    background-color:#BFD4DC;
+    border-width:4px;
+    border-color:#363636;
+    -moz-border-radius:20px;
+    -webkit-border-radius:20px;
+    border-radius:20px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow:2px 2px 4px #000000;
+    -webkit-box-shadow:2px 2px 4px #000000;
+    box-shadow:2px 2px 4px #000000;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
+    /*Shadows look very different in IE (Only cardinal directions supported)*/
+    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
+    /*Element should have a background-color*/
+    /*All filters must be placed together*/
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px;
+    font-size: 16px;
+    
+	font-family: 'Neuton', serif;
+	color: #41565e;
+    text-decoration: none;
+    
 
-    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
-    background-image: linear-gradient(top, #eeeeee, #cccccc);
-    border: 1px solid #ccc;
-    border-bottom: 1px solid #bbb;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-    border-radius: 3px;
-    color: #333;
-    font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
-    line-height: 1;
-    padding: 8px 0;
-    text-align: center;
-    text-shadow: 0 1px 0 #eee;
-    width: 150px; 
-    padding-left: 5px;
-    padding-right: 5px;
     }
     
 .button:hover {
-    background-color: #dddddd;
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#bbbbbb));
-
-    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
-    background-image: linear-gradient(top, #dddddd, #bbbbbb);
-    border: 1px solid #bbb;
-    border-bottom: 1px solid #999;
-    cursor: pointer;
-    text-shadow: 0 1px 0 #ddd; }
-.button:active {
-    border: 1px solid #aaa;
-    border-bottom: 1px solid #888;
-    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
-    -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
-    -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
-    -o-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
-    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
-*/
+    -moz-box-shadow:none;
+    -webkit-box-shadow:none;
+    box-shadow: none;
+    color: #41565e;
+}
+ 
+.button.active{
+    -moz-box-shadow:5px 5px 7px #000000;
+    -webkit-box-shadow:5px 5px 7px #000000;
+    box-shadow:5px 5px 7px #000000;
+    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
+    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
+}

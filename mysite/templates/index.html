@@ -31,7 +31,7 @@
             </br></br>
             <section class="entry-author">
                 <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
-                <a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a>
+                <span><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a></span>
                 {% disqus_num_replies %}
             </section>
         </article>
