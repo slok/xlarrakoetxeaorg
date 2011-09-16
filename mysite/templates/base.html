@@ -62,9 +62,12 @@
     <!-- 960 grid system -->
     <link rel="stylesheet" href="{{STATIC_URL}}css/960.css" />
     
+    <!-- github buttons -->
+    <link rel="stylesheet" href="{{STATIC_URL}}css/gh-buttons.css" />
+    
     <!-- Google Fonts! -->
     
-    <link href='http://fonts.googleapis.com/css?family=Julee' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Changa+One' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Passero+One' rel='stylesheet' type='text/css'>
     
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
@@ -90,9 +93,9 @@
                 <div class="special-div">
                     <ul>
                         {% block navmenu %}
-                        <li class="navmenu-list"><a href="/blog">Blog</a></li>
-                        <li class="navmenu-list"><a href="/projects">Projects</a></li>
-                        <li class="navmenu-list"><a href="/about" >About</a></li>
+                        <li class="navmenu-list"><a class="button" href="/blog">Blog</a></li> 
+                        <li class="navmenu-list"><a class="button" href="/projects">Projects</a></li>
+                        <li class="navmenu-list"><a class="button" href="/about" >About</a></li>
                         {% endblock navmenu %}
                     </ul>
                 </div>

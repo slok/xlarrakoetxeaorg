@@ -12,7 +12,7 @@
     <div class="special-div">
     {%for entry in entries %}
         <article class="entry ">
-            <h3><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h3>
+            <h2 class="title"><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h2>
             <section class="entry-date">
                     <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date|date:'l, F d, Y'}}</a>
                 </section>
@@ -34,7 +34,6 @@
                 <a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a>
                 {% disqus_num_replies %}
             </section>
-            {% entry_tags entry %}
         </article>
         </br>
     {% endfor %}

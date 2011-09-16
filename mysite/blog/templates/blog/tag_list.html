@@ -1,6 +1,13 @@
 {% extends "blog/blog.html" %}
 
-{% block pageTitle %} Cloud tags{% endblock pageTitle %}
+{% block navmenu %}
+    <li class="navmenu-list"><a class="button" href="/blog">Blog</a></li> 
+    <li class="navmenu-list"><a class="button" href="/projects">Projects</a></li>
+    <li class="navmenu-list"><a class="button" href="/about" >About</a></li>
+    <li class="navmenu-list"><a class="button active" href="/blog/tags" >Tags</a></li>
+{% endblock navmenu %}
+
+{% block pageTitle %} Tag cloud {% endblock pageTitle %}
 
 {% block mainSection %}
     <section class="main-section grid_12">

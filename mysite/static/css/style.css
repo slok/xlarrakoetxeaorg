@@ -215,7 +215,6 @@ li.side-tag-list,
 .tag-cloud,
 .archive-dates,
 .archive-dates-list,
-.entry-date,
 .comments,
 .entry,
 .entry-tag,
@@ -230,6 +229,10 @@ li.navmenu-list {
     padding:2px;
     margin: 1px;
     }
+
+li.navmenu-list{
+    float: right;
+}
 
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * The ones that use special-div
@@ -292,10 +295,13 @@ div.special-div{
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Design :D
  */
+ 
+body{
+    font: 14px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+} 
 html{
     /*background-image:url('../img/bright_squares.png');*/
     background-color: #588EA3;
-
     }
     
 .authors,
@@ -355,25 +361,32 @@ html{
     /*All filters must be placed together*/
 
 }
-pre{
-    background-color:#bababa;
-    border:solid 1px #000000;
-    padding:10px;
-    border-radius:5px;
 
+code,
+pre{
+    background-color:#dcdcdc;
+    border:solid 1px #bababa;
+    padding:10px;
+    font-family:monospace;
+    font-size: 12px;
 }
+
+code{
+    padding: 1px;
+}
+
 .logo a{
-    font-family: 'Aldrich', sans-serif;
-    color: #e1e1e1; 
+    font-family: 'Changa One', sans-serif;
+    color: #456F7F;
+    text-shadow: 1px 1px 0px #bad3ed; 
+    opacity:1.0;
 }
 .logo a:hover{
-    color: #ababab;
+    color: #dcdcdc;
 }
 
 .pagination a,
-.navmenu,
-.entry-author span,
-.entry-date a{
+.entry-author span{
     background-color:#bababa;
 }
 .twitter-share-button,
@@ -382,3 +395,74 @@ pre{
 
 }
 
+.title a{
+    color: #425E6A;
+	font: 25px "Helvetica Neue", Helvetica Neue, Helvetica, arial, sans-serif;
+	font-weight: 300;
+    text-decoration:none;
+}
+.entry-date a:hover,
+.title a:hover{
+    text-decoration:underline;
+}
+.entry-date a{
+    font-size: 11px;
+	font-weight: normal;
+	color: #425A6A;
+    text-decoration:none;
+}
+
+
+/*-------------------------------------------------------------------
+ *Navmenu Button stiles 
+ * Commented: Use css3 github buttons (https://github.com/necolas/css3-github-buttons);) 
+ */
+ 
+/* 
+.button{
+
+    background-image: -webkit-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -moz-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -ms-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: -o-linear-gradient(top, #eeeeee, #cccccc);
+    background-image: linear-gradient(top, #eeeeee, #cccccc);
+    border: 1px solid #ccc;
+    border-bottom: 1px solid #bbb;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    color: #333;
+    font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+    line-height: 1;
+    padding: 8px 0;
+    text-align: center;
+    text-shadow: 0 1px 0 #eee;
+    width: 150px; 
+    padding-left: 5px;
+    padding-right: 5px;
+    }
+    
+.button:hover {
+    background-color: #dddddd;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#dddddd), to(#bbbbbb));
+
+    background-image: -webkit-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -moz-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -ms-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: -o-linear-gradient(top, #dddddd, #bbbbbb);
+    background-image: linear-gradient(top, #dddddd, #bbbbbb);
+    border: 1px solid #bbb;
+    border-bottom: 1px solid #999;
+    cursor: pointer;
+    text-shadow: 0 1px 0 #ddd; }
+.button:active {
+    border: 1px solid #aaa;
+    border-bottom: 1px solid #888;
+    -webkit-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -ms-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    -o-box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 5px 2px #aaaaaa, 0 1px 0 0 #eeeeee; }
+*/

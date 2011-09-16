@@ -1,6 +1,8 @@
 {% extends "base.html" %} 
 
 {% block navmenu %}
-    {{ block.super }}
-    <li class="navmenu-list"><a href="/blog/tags" >Tags</a></li>
+    <li class="navmenu-list"><a class="button active" href="/blog">Blog</a></li> 
+    <li class="navmenu-list"><a class="button" href="/projects">Projects</a></li>
+    <li class="navmenu-list"><a class="button" href="/about" >About</a></li>
+    <li class="navmenu-list"><a class="button" href="/blog/tags" >Tags</a></li>
 {% endblock navmenu %}
