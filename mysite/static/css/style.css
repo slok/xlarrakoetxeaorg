@@ -195,27 +195,27 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
  * li.menu-tag: earch tag in the menu
  */
 .search,
-li.side-tag-list,
+.side-tag li,
 .side-tag,
 .tag-cloud,
 .archive-dates,
-.archive-dates-list,
+.archive-dates li,
 .comments,
 .entry,
 .entry-tag,
-li.entry-tag-list,
+.entry-tag li,
 .pagination{
     padding:5px;
     }
     
-li.entry-tag-list,
-li.navmenu-list {
+.entry-tag li,
+.navmenu li {
     float: left;
     padding:2px;
     margin: 1px;
     }
 
-li.navmenu-list{
+.navmenu li{
     float: right;
 }
 
@@ -260,20 +260,20 @@ div.special-div{
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * Put border (for design porpouses) in the same place, that way if we want to commented we doit in one time
 */
-li.authors-list
-li.side-tag-list,
+.authors li,
+.side-tag li,
 .side-tag,
 .tag-cloud,
 .archive-dates,
-.archive-dates-list,
+.archive-dates li,
 .tag-cloud,
 .entry-date,
 .comments,
 .entry,
 .entry-tag,
-li.entry-tag-list,
+.entry-tag li,
 .pagination,
-li.navmenu-list,
+.navmenu li,
 div.special-div{
     /*border:solid 1px #1d56ab;*/
 }
@@ -484,7 +484,7 @@ code{
     padding: 5px;
     padding-left: 10px;
     padding-right: 10px;
-    margin: 5px;
+    margin: 5px 0px 5px 5px;
     font-size: 16px;
     
 	font-family: 'Neuton', serif;

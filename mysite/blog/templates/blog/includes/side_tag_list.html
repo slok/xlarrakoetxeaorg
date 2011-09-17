@@ -3,7 +3,7 @@
      <h2>Tags</h2>
     <ul>
         {% for tag in tags %}
-        <li class="side-tag-list"><a href="{% url blog.views.tag_detail tag.name %}">{{ tag.name }}({{tag.count}})</a></li>
+        <li><a href="{% url blog.views.tag_detail tag.name %}">{{ tag.name }}({{tag.count}})</a></li>
         {% endfor %}
     </ul>
 </section>
