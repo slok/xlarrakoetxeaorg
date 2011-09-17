@@ -23,7 +23,7 @@
             
                 {% else %}{% if entry.entry_format == 'md' %}
             
-                    {{entry.body|markdown:'safe,codehilite'|truncatewords:20}}
+                    {{entry.body|markdown:'safe,codehilite,tables'|truncatewords:20}}
                     
                 {% endif %}
             

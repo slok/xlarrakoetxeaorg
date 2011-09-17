@@ -27,7 +27,7 @@ from mysite.blog.managers import PublishedManager
 #    return users
 
 def _get_default_user():
-    return User.objects.get(pk=0)
+    return User.objects.get(pk=1)
 
 
 class Entry(models.Model):

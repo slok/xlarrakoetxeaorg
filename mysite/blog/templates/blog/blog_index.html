@@ -37,7 +37,7 @@
             
                 {% else %}{% if entry.entry_format == 'md' %}
             
-                    {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite'}}
+                    {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite,tables'}}
                     
                 {% endif %}
             
