@@ -1,11 +1,12 @@
 {% extends "base.html" %} 
 {% load markup %}
+{% load readmorefilter %}
 {% load taggingtags %}
 {% load disqus_tags %}
 
 {% block title %} Xabier Larrakoetxea {% endblock %}
 
-{% block pageTitle %}Latest entries {% endblock pageTitle %}
+{% block pageTitle %}Latest entry {% endblock pageTitle %}
 
 {% block mainSection %}
 <section class="main-section grid_12">
@@ -19,16 +20,18 @@
             </br>
             {% if entry.entry_format == 'html' %}
             
-                {{entry.body|safe|truncatewords:20}}
+                {{entry.body|readmore:'<!--more-->'|safe}}
             
                 {% else %}{% if entry.entry_format == 'md' %}
             
-                    {{entry.body|markdown:'safe,codehilite,tables'|truncatewords:20}}
+                    {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite,tables'}}
                     
                 {% endif %}
             
             {% endif %}
-            </br></br>
+            </br>
+            <div class="readmore"> <a href="{{ entry.get_absolute_url }}"><b>Read more</b></a> </div>
+            </br>
             <section class="entry-author">
                 <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
                 <span><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a></span>
@@ -37,27 +40,30 @@
         </article>
         </br>
     {% endfor %}
+    
     </div>
 </section>
 
 <div class="clear"></div>
 
-<section class="page-title grid_12">
-    <div class="special-div">Twitter</div>
-</section>
-
-<div class="clear"></div>
-</br>
-<section class="entry grid_12">
+<section class="syncs grid_12">
     <div class="special-div">
-        <ul>
-            <li>*tweet</li>
-            <li>*tweet</li>
-            <li>*tweet</li>
-            <li>*tweet</li>
-            <li>*tweet</li>
-        </ul>
+        <section class="page-title">
+            <h1>Twitter</h1>
+        </section>
+        </br>
+        <section class="tweets">
+            <ul>
+                <li>*tweet</li>
+                <li>*tweet</li>
+                <li>*tweet</li>
+                <li>*tweet</li>
+                <li>*tweet</li>
+            </ul>
+        </section>
     </div>
 </section>
+
+
 
 {% endblock mainSection %}

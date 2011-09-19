@@ -60,10 +60,12 @@
 {% endblock mainSection %}
 
 {% block sidebar %}
-    <aside class="side-block grid_3 omega">
+    <aside class="side-section grid_3 omega">
         <div class="special-div">
-        {% archive_dates %}
-        {% side_tag_list %}
+        <section class="side-block"> 
+            {% archive_dates %}
+            {% side_tag_list %}
+        </section>
         </div>
     </aside>
 {% endblock sidebar%}

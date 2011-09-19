@@ -6,7 +6,7 @@ from mysite.blog.models import Entry
 
 def index(request):
     
-    entries = Entry.published_objects.all()[:2]
+    entries = Entry.published_objects.all()[:1]
     
     data = { 
         'entries' : entries,

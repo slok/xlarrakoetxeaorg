@@ -251,6 +251,25 @@ tr td{
     padding: 5px;
 }
 
+body{
+    font: 14px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
+} 
+html{
+    /*background-image:url('../img/bright_squares.png');*/
+    background-color: #588EA3;
+    }
+
+a{
+    text-decoration: none;
+    color: #41565e;
+    font-size: 14px;
+    font-weight: bold;
+}
+a:hover{
+    color: #BFD4DC;
+}
+
+
 /*---------------------------------------------------*/
 .search,
 .side-tag li,
@@ -259,7 +278,6 @@ tr td{
 .archive-dates,
 .archive-dates li,
 .comments,
-.entry,
 .entry-tag,
 .entry-tag li,
 .pagination{
@@ -298,7 +316,7 @@ tr td{
     padding-bottom: 10px;
     } 
  
-.page-title {
+.page-title h1{
     font-family: 'Passero One', cursive;
     font-weight: bold;
     font-size:250%;
@@ -306,6 +324,10 @@ tr td{
     color: #41565e;
     
     } 
+.page-title{
+    margin-bottom: 10px;
+    padding:10px 20px 10px 20px
+}
 .logo{
     font-size:300%;
 }
@@ -316,6 +338,9 @@ tr td{
 .main-section{
     margin: 5px;
     }
+.side-block{
+    padding: 5px;
+}
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
  *This is used to solve the problem with grid 960 and the padding. Solution from: http://divitodesign.com/css/tricks-to-solve-960-css-framework-problems/
  * 
@@ -352,24 +377,7 @@ div.special-div{
  * Design :D
  */
 
-body{
-    font: 14px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-} 
-html{
-    /*background-image:url('../img/bright_squares.png');*/
-    background-color: #588EA3;
-    }
-
-a{
-    text-decoration: none;
-    color: #41565e;
-    font-size: 14px;
-    font-weight: bold;
-}
-a:hover{
-    color: #BFD4DC;
-}
-
+.tweets,
 .search,    
 .authors,
 .tag-cloud,
@@ -401,7 +409,7 @@ a:hover{
     /*All filters must be placed together*/
 
 }
-
+.tweets,
 .entry{
     padding: 15px;
 }
@@ -484,6 +492,12 @@ code{
 
 .side-block h2{
     font-size: 16px;
+}
+
+.side-tag h2,
+.archive-dates h2{
+    padding-top: 0px;
+    padding-bottom: 0px;
 }
 
 code,

@@ -91,9 +91,9 @@
                 <div class="special-div">
                     <ul>
                         {% block navmenu %}
-                        <li><a class="button" href="/blog">Blog</a></li> 
-                        <li><a class="button" href="/projects">Projects</a></li>
                         <li><a class="button" href="/about" >About</a></li>
+                        <li><a class="button" href="/projects">Projects</a></li>
+                        <li><a class="button" href="/blog">Blog</a></li> 
                         {% endblock navmenu %}
                     </ul>
                 </div>
@@ -102,9 +102,11 @@
 	</header>
 <!--*********************************************************************-->
     
-    <section class="page-title grid_12">
+    <section class="title-block grid_12">
         <div class="special-div">
-        {% block pageTitle %}Title!{% endblock pageTitle%}
+            <section class="page-title">
+                <h1>{% block pageTitle %}Title!{% endblock pageTitle%}</h1>
+            </section>
         </div>
     </section>
     <div class="clear"></div>
@@ -121,7 +123,7 @@
 <!--*********************************************************************-->
 	<footer class="footer-block grid_12">
         <div class="special-div">
-		<p><small>&copy; Copyright Your Name Here 2011. All Rights Reserved.</small></p>
+		<a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/"><img alt="Licencia de Creative Commons" style="border-width:0" src="http://i.creativecommons.org/l/by-sa/3.0/88x31.png" /></a><br /><span xmlns:dct="http://purl.org/dc/terms/" property="dct:title">XLarrakoetxeaorg</span> by <a xmlns:cc="http://creativecommons.org/ns#" href="http://www.xlarrakoetxea.org" property="cc:attributionName" rel="cc:attributionURL">Xabier (slok) Larrakoetxea</a> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">Creative Commons Reconocimiento-CompartirIgual 3.0 Unported License</a>.<br />Creado a partir de la obra en <a xmlns:dct="http://purl.org/dc/terms/" href="http://www.xlarrakoetxea.org" rel="dct:source">www.xlarrakoetxea.org</a>.
         {% block footer %} {% endblock footer %}
         </div>
     </footer>
