@@ -1,6 +1,9 @@
 from django.conf.urls.defaults import patterns, include, url
 from blog import views
 
+from haystack.views import SearchView, search_view_factory
+from haystack.query import SearchQuerySet
+from forms import EntrySearchForm
 
 urlpatterns = patterns('',
     
@@ -16,5 +19,15 @@ urlpatterns = patterns('',
     url(r'^authors/(?P<author>[-\w]+)/$', views.author_detail),
     url(r'^authors/$', views.author_list),
     
-    url(r'^search/', include('haystack.urls')),
 ) 
+
+#Haystack search url and view call
+urlpatterns += patterns('haystack.views',
+    url(r'^search/$', search_view_factory(
+        view_class=SearchView,
+        template='blog/search.html',
+        searchqueryset=SearchQuerySet(),
+        form_class=EntrySearchForm,
+        results_per_page=10,
+    ), name='haystack_search'),
+)

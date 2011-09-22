@@ -74,7 +74,6 @@ class Entry(models.Model):
 
     @models.permalink
     def get_absolute_url(self):
-        #I use the name of the view in blog/urls.py, not the view
         return ('blog.views.blog_entry_detail', (), {
             'year': self.pub_date.year,
             'month': self.pub_date.strftime("%m"),
