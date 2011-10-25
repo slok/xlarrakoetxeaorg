@@ -235,16 +235,19 @@ h1,h2,h3,h4,h5,h6{
     line-height: 36px;
 }
 
+table{
+    border:solid 1px #68838E;
+}
 tr:nth-child(odd){
-    background-color:#dedede; 
+    background-color:transparent; 
 }
 
 tr:nth-child(even){ 
-    background-color:#fff; 
+    background-color:#E7CD9B; 
 }
 
 th{
-     background-color:#aaa;
+     background-color:#D9B779;
      padding: 10px
 }
 tr td{
@@ -254,8 +257,10 @@ tr td{
 .search-form tr:nth-child(odd),
 .search-form tr:nth-child(even),
 .search-form th,
-.search-form tr td{
+.search-form tr td,
+table.search-form {
     background-color: transparent;
+    border: none;    
 }
 
 body{
@@ -274,6 +279,11 @@ a{
 }
 a:hover{
     color: #BFD4DC;
+}
+
+.foot a:hover
+{
+     color: #588EA3;
 }
 
 
@@ -314,6 +324,13 @@ a:hover{
     list-style-type: none;
 }
 
+.foot
+{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding:10px 20px 10px 20px
+}
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
  * The ones that use special-div
  * */
@@ -422,6 +439,7 @@ div.special-div{
     padding: 15px;
 }
 
+.foot,
 .page-title{
     background-color:#BFD4DC;
     border-width:4px;
