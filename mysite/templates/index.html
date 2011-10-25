@@ -6,6 +6,29 @@
 
 {% block title %} Xabier Larrakoetxea {% endblock %}
 
+{% block head %}
+    <!-- tweets :) -->
+    <script language="javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js" type="text/javascript"></script>
+    <script language="javascript" src="{{STATIC_URL}}/js/jquery.tweet.js" type="text/javascript"></script> 
+    <script type='text/javascript'>
+        jQuery(function($){
+            $(".tweet").tweet({
+                username: "slok69",
+                join_text: "auto",
+                avatar_size: 48,
+                count: 5,
+                auto_join_text_default: "",
+                auto_join_text_ed: "",
+                auto_join_text_ing: "",
+                auto_join_text_reply: "Replie to:",
+                auto_join_text_url: "",
+                loading_text: "loading tweets..."
+            });
+        });
+    </script>
+    <link href="{{STATIC_URL}}css/jquery.tweet.css" media="all" rel="stylesheet" type="text/css"/>  
+{% endblock head %}
+
 {% block pageTitle %}Latest entry {% endblock pageTitle %}
 
 {% block mainSection %}
@@ -53,13 +76,7 @@
         </section>
         </br>
         <section class="tweets">
-            <ul>
-                <li>*tweet</li>
-                <li>*tweet</li>
-                <li>*tweet</li>
-                <li>*tweet</li>
-                <li>*tweet</li>
-            </ul>
+            <div class="tweet"></div> 
         </section>
     </div>
 </section>
