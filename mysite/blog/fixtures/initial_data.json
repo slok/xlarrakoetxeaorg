@@ -72,7 +72,7 @@
     "pk": 5,
     "fields": {
         "title": "fiveth fixture",
-        "body": "Curabitur enim urna, fermentum ut eleifend quis, consectetur cursus neque. Nunc velit turpis, dignissim sit amet viverra eu, dapibus quis turpis. Etiam non ante in nisl congue pellentesque. Vivamus arcu nulla, adipiscing eu imperdiet quis, condimentum ut tortor. Curabitur justo justo, mattis at commodo nec, lobortis at turpis. Vestibulum sit amet dolor nec tortor ornare egestas. Curabitur tristique arcu in nunc pharetra eget egestas urna auctor. Mauris eleifend leo sodales urna ornare sit amet pellentesque purus pulvinar. Mauris dictum accumsan condimentum. Etiam gravida lacinia justo, non dignissim nisl semper id. Vestibulum non nunc diam. Aliquam ac lorem ut lacus euismod scelerisque. Cras id turpis lacinia dui porta vehicula. ",
+        "body": " Curabitur enim urna, fermentum ut eleifend quis, consectetur cursus neque. Nunc velit turpis, dignissim sit amet viverra eu, dapibus quis turpis. Etiam non ante in nisl congue pellentesque. Vivamus arcu nulla, adipiscing eu imperdiet quis, condimentum ut tortor. Curabitur justo justo, mattis at commodo nec, lobortis at turpis. Vestibulum sit amet dolor nec tortor ornare egestas. Curabitur tristique arcu in nunc pharetra eget egestas urna auctor. Mauris eleifend leo sodales urna ornare sit amet pellentesque purus pulvinar. Mauris dictum accumsan condimentum. Etiam gravida lacinia justo, non dignissim nisl semper id. Vestibulum non nunc diam. Aliquam ac lorem ut lacus euismod scelerisque. Cras id turpis lacinia dui porta vehicula. ",
         "slug": "fiveth-fixture",
         "author": 1,
         "pub_date": "2011-06-11 21:49:17",
