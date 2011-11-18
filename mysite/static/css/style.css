@@ -19,8 +19,7 @@ html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquot
 	outline: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-	/*Original background*/
-    background: transparent;
+	background: transparent;
 }									
 
 article, aside, figure, footer, header, hgroup, nav, section {display: block;}
@@ -148,6 +147,8 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 
 
 
+
+
 /* Print styles!
 -------------------------------------------------------------------------------*/
 @media print {
@@ -174,477 +175,58 @@ mark {background-color: #fcd700; color: #000; font-style: italic; font-weight: b
 	
 }
 
-/*
- * Custom classes to replace in the html (Maybe I miss some :S)
- *------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * .navmenu: the navigation menu class 
- * li.navmenu: each button of the nav menu
- * .page-title: the title page
- * .entry: The block of all the entry
- * .main-section: the central block (between title and footer)
- * .entry: an entry block (blog post) 
- * .side-block: the block in the side (in this one for now in the right)
- * .footer-block: the block in the bottom 
- * .entry-date: the date of the entry block
- * .comments: the comments block
- * .pagination: pagination block section
- * a.pagination: each pagination link
- * .entry-tag: entry tags
- * li.entry-tags: each tag of the entry
- * .menu-tag: tags in the menu
- * li.menu-tag: earch tag in the menu
- */
- 
- /*restore things*/
- ul ul,
- ul {
-     list-style-type: disc;
-     margin-left: 25px; 
-     margin-top: 10px;
-     margin-bottom: 10px;
-}
- li {
-    padding: 5px;
- } 
- ul ul{
-    list-style-type: circle;
- }
-p {
-    margin-top: 20px;
-    margin-bottom: 20px;
-    line-height: 18px;
-}
-h1{
-    font-size: 22px;
-    font-style: bold;
-}
-h2{
-    font-size: 20px;
-    font-style: bold;
-}
-h3{
-    font-size: 18px;
-    font-style: bold;
-}
 
-body{
-    line-height:18px;
-}
+/*-------------------------------------------------------------------------------*/
 
-h1,h2,h3,h4,h5,h6{
-    line-height: 36px;
-}
 
-table{
-    border:solid 1px #68838E;
-}
-tr:nth-child(odd){
-    background-color:transparent; 
-}
 
-tr:nth-child(even){ 
-    background-color:#E7CD9B; 
-}
-
-th{
-     background-color:#D9B779;
-     padding: 10px
-}
-tr td{
-    padding: 5px;
-}
-
-.search-form tr:nth-child(odd),
-.search-form tr:nth-child(even),
-.search-form th,
-.search-form tr td,
-table.search-form {
-    background-color: transparent;
-    border: none;    
-}
-
-body{
-    font: 14px "Helvetica Neue", Helvetica Neue, Helvetica, Arial, sans-serif;
-} 
-html{
-    /*background-image:url('../img/bright_squares.png');*/
-    background-color: #588EA3;
-    }
-
-a{
-    text-decoration: none;
-    color: #41565e;
-    font-size: 14px;
-    font-weight: bold;
-}
-a:hover{
-    color: #BFD4DC;
-}
-
-.foot a:hover
+body
 {
-     color: #588EA3;
+    background-image:url('../img/black_paper.png');
 }
 
-
-/*---------------------------------------------------*/
-.search-results,
-.search,
-.side-tag li,
-.side-tag,
-.tag-cloud,
-.archive-dates,
-.archive-dates li,
-.comments,
-.entry-tag,
-.entry-tag li,
-.pagination{
-    padding:5px;
-    }
-    
-.entry-tag li,
-.navmenu li {
-    float: left;
-    padding:2px;
-    margin: 1px;
-    }
-
-.navmenu li{
-    float: right;
-}
-
-
-.entry-tag li,
-.navmenu li,
-.side-tag li,
-.archive-dates li,
-.authors li,
-.entry-tag li
+header
 {
-    list-style-type: none;
+    background: #3D3D3D;
+    padding: 15px 0;
+
+}
+article.banner
+{
+    background:url('../img/cork_1.png') repeat top center;
+    height: 200px
 }
 
-.foot
+footer
 {
-    text-align: center;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    padding:10px 20px 10px 20px
+    background: #3D3D3D;
+
 }
+
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * The ones that use special-div
- * */
-.entry-tag, 
-.navmenu {
-	list-style: none;
-    margin: 5px;
-    padding-bottom: 10px;
-    } 
- 
-.page-title h1{
-    font-family: 'Passero One', cursive;
-    font-weight: bold;
-    font-size:250%;
-    margin: 5px;
-    color: #41565e;
-    
-    } 
-.page-title{
-    margin-bottom: 10px;
-    padding:10px 20px 10px 20px
-}
-.logo{
-    font-size:300%;
-}
-
-.logo,
-.side-block,
-.footer-block,
-.main-section{
-    margin: 5px;
-    }
-.side-block{
-    padding: 5px;
-}
-/*------------------------------------------------------------------------------------------------------------------------------------------------------------------
- *This is used to solve the problem with grid 960 and the padding. Solution from: http://divitodesign.com/css/tricks-to-solve-960-css-framework-problems/
- * 
- * We have tu use it every time that wqe use padding and grid_xx (put after grid_xx class block)
- * 
- **/
+*This is used to solve the problem with grid 960 and the padding. Solution from: http://divitodesign.com/css/tricks-to-solve-960-css-framework-problems/
+*
+* We have tu use it every time that wqe use padding and grid_xx (put after grid_xx class block)
+*
+**/
 div.special-div{
     padding:5px;
 
 }
 
-/*------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * Put border (for design porpouses) in the same place, that way if we want to commented we doit in one time
-*/
-.authors li,
-.side-tag li,
-.side-tag,
-.tag-cloud,
-.archive-dates,
-.archive-dates li,
-.tag-cloud,
-.entry-date,
-.comments,
-.entry,
-.entry-tag,
-.entry-tag li,
-.pagination,
-.navmenu li,
-div.special-div{
-    /*border:solid 1px #1d56ab;*/
-}
-
-/*------------------------------------------------------------------------------------------------------------------------------------------------------------------
- * Design :D
- */
-
-.tweets,
-.search,    
-.authors,
-.tag-cloud,
-.comments,
-.side-block,
-.entry{
-    background-color:#E8D3AB;
-    border-width:4px;
-    border-color:#363636;
-    -moz-border-radius:2px 31px;
-    -webkit-border-radius:2px 31px 2px 31px;/*This is the correct shorthand for webkit*/
-    border-radius:2px 31px;
-    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
-    -moz-box-shadow:5px 5px 7px #000000;
-    -webkit-box-shadow:5px 5px 7px #000000;
-    box-shadow:5px 5px 7px #000000;
-    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
-    /*Shadows look very different in IE (Only cardinal directions supported)*/
-    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-    /*Element should have a background-color*/
-    /*All filters must be placed together*/
-    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-    opacity:1.0;
-    -ms-filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=52);
-    /*-ms-filter must come before filter*/
-    filter: alpha(opacity=52);
-    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-    /*All filters must be placed together*/
+/*------------------------------------------------------------------------------------*/
+div.entry-index
+{
+    background-color:#e0d8ca;
+    border-width:2px;
+    border-color:#878483;
 
 }
-.tweets,
-.entry{
-    padding: 15px;
-}
-
-.foot,
-.page-title{
-    background-color:#BFD4DC;
-    border-width:4px;
-    border-color:#363636;
-    -moz-border-radius:20px;
-    -webkit-border-radius:20px;
-    border-radius:20px;
-    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
-    -moz-box-shadow:5px 5px 7px #000000;
-    -webkit-box-shadow:5px 5px 7px #000000;
-    box-shadow:5px 5px 7px #000000;
-    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
-    /*Shadows look very different in IE (Only cardinal directions supported)*/
-    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-    /*Element should have a background-color*/
-    /*All filters must be placed together*/
-    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-
-}
-
-
-
-code{
-    padding: 1px;
-}
-
-
-
-.logo a{
-	font-size:60px;
-	font-family: 'Neuton', serif;
-	color: #CFDFE8;
-	text-shadow: 1px 3px 5px #000000;
-    text-decoration: none;
-}
-.logo a:hover {
-	color: #CFDFE8;
-	text-shadow: 8px 8px 10px #000000;
-}
-
-
-
-
-.pagination a{
-    background-color:#bababa;
-}
-
-.side-block h2,
-.entry-tag li,
-.entry-author span{
-    background-color:#588EA3;
-    border-width:4px;
-    border-color:#363636;
-    -moz-border-radius:20px;
-    -webkit-border-radius:20px;
-    border-radius:20px;
-    margin-top: 5px;
-    padding: 4px;
-    padding-left: 10px;
-    padding-right: 10px;
-    
-    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
-    -moz-box-shadow:inset 5px 5px 7px #000000;
-    -webkit-box-shadow:inset 5px 5px 7px #000000;
-    box-shadow:inset 5px 5px 7px #000000;
-    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
-
-    color: #E8D3AB;
-}
-
-.entry-tag li{
-    margin-right: 10px;
-}
-
-.side-block h2{
-    font-size: 16px;
-}
-
-.side-tag h2,
-.archive-dates h2{
-    padding-top: 0px;
-    padding-bottom: 0px;
-}
-
-code,
-pre{
-    background-color:#CFDFE8;
-    border:solid 1px #68838E;
-    font-family:monospace;
-    font-size: 12px;
-    padding: 15px;
-    margin: 10px;
-    -moz-border-radius:5px;
-    -webkit-border-radius:5px;
-    border-radius:5px;
-    white-space: pre-line;
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
-}
-code{
-    padding:5px;
-    padding-top: 2px;
-    padding-bottom: 2px;
-    margin: 1px;
-}
-
-
-
-
-.entry-tag{
-    margin-bottom: 20px;
-}
-
-.entry-author {
-    margin-bottom: 5px;
-}
-
-.twitter-share-button,
-.google-plusone-button{
-    float: left; 
-
-}
-
-.title a{
-    color: #425E6A;
-	font: 25px "Helvetica Neue", Helvetica Neue, Helvetica, arial, sans-serif;
-	font-weight: 300;
-    text-decoration:none;
-    font-weight:bold;
-}
-.entry-tag a:hover,
-.entry-author a:hover,
-.entry-date a:hover,
-.title a:hover{
-    text-decoration:underline;
-}
-
-.entry-tag a,
-.entry-author a{
-    
-    color: #E2D59B;
-    text-decoration:none;
-    font-weight:bold;
-    
-}
-.entry-date a{
-    font-size: 11px;
-	font-weight: normal;
-	color: #425A6A;
-    text-decoration:none;
-}
-
-
-/*-------------------------------------------------------------------
- *Navmenu Button styles 
- */
- 
-.pagination a,
-.button{
-    background-color:#BFD4DC;
-    border-width:4px;
-    border-color:#363636;
-    -moz-border-radius:20px;
-    -webkit-border-radius:20px;
-    border-radius:20px;
-    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
-    -moz-box-shadow:2px 2px 4px #000000;
-    -webkit-box-shadow:2px 2px 4px #000000;
-    box-shadow:2px 2px 4px #000000;
-    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
-    /*Shadows look very different in IE (Only cardinal directions supported)*/
-    /*INNER ELEMENTS MUST NOT BREAK THIS ELEMENTS BOUNDARIES*/
-    /*Element should have a background-color*/
-    /*All filters must be placed together*/
-    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-    padding: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-    margin: 5px 0px 5px 5px;
-    font-size: 16px;
-    
-	font-family: 'Neuton', serif;
-	color: #41565e;
-    text-decoration: none;
-    
-
-    }
-    
-.pagination a:hover,    
-.button:hover {
-    -moz-box-shadow:none;
-    -webkit-box-shadow:none;
-    box-shadow: none;
-    color: #41565e;
-    font-size: 14px;
-}
- 
-.button.active{
-    -moz-box-shadow:5px 5px 7px #000000;
-    -webkit-box-shadow:5px 5px 7px #000000;
-    box-shadow:5px 5px 7px #000000;
-    filter: progid:DXImageTransform.Microsoft.Shadow(strength=5, direction=135, color='#000000');
-    -ms-filter: "progid:DXImageTransform.Microsoft.Shadow(strength=5, Direction=135, Color='#000000')";
+div.entry-index-box
+{
+    background-color:#e0d8ca;
+    border-width:2px;
+    border-color:#878483;
+    height: 50px;
+    width: 1px;
 }
