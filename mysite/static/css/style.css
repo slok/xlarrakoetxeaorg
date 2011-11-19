@@ -194,15 +194,125 @@ header
 article.banner
 {
     background:url('../img/cork_1.png') repeat top center;
-    height: 200px
+    height: 200px;
 }
 
 footer
 {
     background: #3D3D3D;
+    text-align: center;
 
 }
 
+ul ul,
+ ul {
+     list-style-type: disc;
+     margin-left: 25px;
+     margin-top: 10px;
+     margin-bottom: 10px;
+}
+ li {
+    padding: 5px;
+ }
+ ul ul{
+    list-style-type: circle;
+ }
+p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    line-height: 18px;
+}
+h1{
+    font-size: 22px;
+    font-style: bold;
+}
+h2{
+    font-size: 20px;
+    font-style: bold;
+}
+h3{
+    font-size: 18px;
+    font-style: bold;
+}
+
+body{
+    line-height:18px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    line-height: 36px;
+}
+
+table{
+    border:solid 1px #68838E;
+}
+tr:nth-child(odd){
+    background-color:transparent;
+}
+
+tr:nth-child(even){
+    background-color:#C7D4ED;
+}
+
+th{
+     background-color:#B2C6EB;
+     padding: 10px
+}
+tr td{
+    padding: 5px;
+}
+
+a{
+    text-decoration: none;
+    color: #ffffff;
+    font-weight: bold;
+}
+a:hover{
+    color: #555555;
+}
+
+code,
+pre{
+    background-color:#C7D4ED;
+    border:solid 1px #454545;
+    font-family:monospace;
+    font-size: 12px;
+    padding: 15px;
+    margin: 10px;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    white-space: pre-line;
+    white-space: pre;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+code{
+    padding:5px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    margin: 1px;
+}
+
+
+
+
+.navmenu {
+    list-style: none;
+    margin: 1px;
+    padding-bottom: 1px;
+} 
+.navmenu li{
+    list-style-type: none;
+    float: right;
+    padding:2px;
+    margin: 1px;
+}
+
+.navmenu.active
+{
+    text-decoration:underline;
+}
 /*------------------------------------------------------------------------------------------------------------------------------------------------------------------
 *This is used to solve the problem with grid 960 and the padding. Solution from: http://divitodesign.com/css/tricks-to-solve-960-css-framework-problems/
 *
@@ -214,19 +324,68 @@ div.special-div{
 
 }
 
-/*------------------------------------------------------------------------------------*/
-div.entry-index
+/*------------------------------------------------------------------------------------*/ 
+.entry-index-box,
+.entry-index
 {
-    background-color:#e0d8ca;
+    /*background-color:;
     border-width:2px;
-    border-color:#878483;
+    border-color:#878483;*/
+
+    background-color:#BFBFBF;
+    border-width:2px;
+    border-color:#999999;
+    -moz-border-radius:5px;
+    -webkit-border-radius:5px;
+    border-radius:5px;
+    /*IE 7 AND 8 DO NOT SUPPORT BORDER RADIUS*/
+    -moz-box-shadow:0px 0px 4px #fff5f2;
+    -webkit-box-shadow:0px 0px 4px #fff5f2;
+    box-shadow:0px 0px 4px #fff5f2;
+    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+    margin-top: 20px;
+    margin-bottom: 20px;
 
 }
-div.entry-index-box
+.entry-index-box
 {
-    background-color:#e0d8ca;
-    border-width:2px;
-    border-color:#878483;
-    height: 50px;
-    width: 1px;
+   /* height: 100px;*/
+
+}
+.day
+{
+    margin: 10px;
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+}
+.month
+{
+    text-align: center;
+    font-size: 15px;
+}
+article.banner h1
+{
+    padding: 30px;
+    font-family: 'Calligraffitti', cursive;
+    font-size:75px;
+    text-align: center ;
+    line-height: 1.0em;
+}
+
+article.banner a
+{
+    color: #000000;
+    font-weight: bold;
+}
+
+article.banner a:hover
+{
+    text-decoration:underline;
+}
+
+/*----------------------------------------------------------------------------------*/
+.tweets
+{
+    
 }

@@ -56,9 +56,14 @@
 	<!-- CSS: screen, mobile & print are all in the same file -->
 	<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
     <link rel="stylesheet" href="{{STATIC_URL}}css/960.css">
-	
+	<link rel="stylesheet" href="{{STATIC_URL}}css/pygments-default.css">
+    
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
 	<script src="{{STATIC_URL}}js/modernizr-1.7.min.js"></script>
+    
+    <!--fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+    
     {% block head %}{% endblock head %}
 </head>
 
@@ -66,12 +71,16 @@
 
 <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
-	<header>
+	 <!--*********************************************************************-->
+    <header>
 		<div class="container_16">
             <nav class="grid_16">
-            <div class="special-div">
+            <div class="navmenu special-div">
                 <ol>
                      {% block navmenu %}
+                        <li><a class="button" href="/about" >About</a></li>
+                        <li><a class="button" href="/projects">Projects</a></li>
+                        <li><a class="button" href="/blog">Blog</a></li> 
                      {% endblock navmenu %}
                 </ol>
             </div>
@@ -80,33 +89,21 @@
             <div class="clear"></div>
         </div>
 	</header>
-	
+	 <!--*********************************************************************-->
     <article class='banner'>
         <div class="container_16">
             <article class="grid_16">
             <div class="special-div">
-                BANNEEEEEEEEER!!!
+               <h1><a href="/">Xabier (slok) Larrakoetxea</a></h1>
             </div>
             </article>
             <div class="clear"></div>
         </div>
     </article>
-
+    <!--*********************************************************************-->
     
     <article class='main-content'>
         <div class="container_16">
-            <article>
-                <div class="entry-index-box grid_2">
-                <div class="special-div">
-                </div>
-                </div>
-                <div class="entry-index grid_14">
-                <div class="special-div">
-                </div>
-                <div class="clear"></div>
-            </article>
-        
-        
             <!--*********************************************************************-->
             <!-- Section not included because some are grid_XX and other grid_YY-->
             {% block mainSection %}
@@ -116,6 +113,7 @@
         </div>
 
 	</article>
+     <!--*********************************************************************-->
 	<footer>
         <div class="container_16">
             <article class="grid_16">

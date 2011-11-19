@@ -19,37 +19,46 @@
 {% endblock pageTitle %}
 
 {% block mainSection %}
-    <section class="main-section grid_9 aplha">
-    <div class="special-div">
     {%for entry in entries.object_list%}
         <article class="entry ">
-            
-            <h2 class="title"><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h2>
-            
-            <section class="entry-date">
-                <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date|date:'l, F d, Y'}}</a>
-            </section>
-            
-            </br>
-            {% if entry.entry_format == 'html' %}
-            
-                {{entry.body|readmore:'<!--more-->'|safe}}
-            
-                {% else %}{% if entry.entry_format == 'md' %}
-            
-                    {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite,tables'}}
-                    
+            <!-- Date of the article box-->
+            <div class="entry-index-box grid_2">
+            <div class="special-div">
+                <!-- <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date|date:'l, F d, Y'}}</a> -->
+                <div class="day">
+                    {{entry.pub_date|date:'d'}}
+                </div>
+                <div class="month">
+                    {{entry.pub_date|date:'M Y'}}
+                </div>
+            </div>
+            </div>
+            <!-- Content of the article box-->
+            <div class="entry-index grid_14">
+            <div class="special-div">
+                <h2 class="title"><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h2>
+                {% if entry.entry_format == 'html' %}
+                
+                    {{entry.body|readmore:'<!--more-->'|safe}}
+                
+                    {% else %}{% if entry.entry_format == 'md' %}
+                
+                        {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite,tables'}}
+                        
+                    {% endif %}
+                
                 {% endif %}
-            
-            {% endif %}
-            </br></br>
-        
-        <section class="entry-author">
-                <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
-                <span><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a></span>
-                {% disqus_num_replies %}
-        </section>
-        
+                </br>
+                <div class="readmore"> <a href="{{ entry.get_absolute_url }}"><b>Read more</b></a> </div>
+                </br>
+                <section class="entry-author">
+                    <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
+                    <span><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a></span>
+                    {% disqus_num_replies %}
+                </section>
+            </div>
+            </div>
+            <div class="clear"></div>
         </article>
         </br>
     {% endfor %}
@@ -58,14 +67,3 @@
     </div><!--special-div-->
     </section>
 {% endblock mainSection %}
-
-{% block sidebar %}
-    <aside class="side-section grid_3 omega">
-        <div class="special-div">
-        <section class="side-block"> 
-            {% archive_dates %}
-            {% side_tag_list %}
-        </section>
-        </div>
-    </aside>
-{% endblock sidebar%}
