@@ -188,13 +188,14 @@ body
 header
 {
     background: #3D3D3D;
-    padding: 15px 0;
+    /*padding: 1px 0;*/
+    /*margin-top: 15px;*/
 
 }
 article.banner
 {
     background:url('../img/cork_1.png') repeat top center;
-    height: 200px;
+    height: 210px;
 }
 
 footer
@@ -263,18 +264,20 @@ tr td{
 }
 
 a{
-    text-decoration: none;
-    color: #ffffff;
+    text-decoration: underline;
+    color: #000000;
     font-weight: bold;
 }
 a:hover{
-    color: #555555;
+    background-color: #898989;
+    color: #000000;
 }
 
 code,
 pre{
     background-color:#C7D4ED;
-    border:solid 1px #454545;
+    border:dashed 1px #454545;
+    /*border:solid 1px #454545;*/
     font-family:monospace;
     font-size: 12px;
     padding: 15px;
@@ -294,19 +297,59 @@ code{
     margin: 1px;
 }
 
-
-
+/*http://matthewjamestaylor.com/blog/beautiful-css-centered-menus-no-hacks-full-cross-browser-support#*/
 
 .navmenu {
-    list-style: none;
-    margin: 1px;
-    padding-bottom: 1px;
-} 
-.navmenu li{
-    list-style-type: none;
-    float: right;
-    padding:2px;
-    margin: 1px;
+   float:left;
+   width:100%;
+   background:transparent;
+   overflow:hidden;
+   position:relative;
+   
+}
+.navmenu ul {
+   clear:left;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   left:50%;
+   text-align:center;
+}
+.navmenu ul li {
+   display:block;
+   float:left;
+   list-style:none;
+   margin:0;
+   padding:0;
+   position:relative;
+   right:50%;
+}
+.navmenu ul li a {
+   display:block;
+   margin:0 0 0 10px;
+   padding:3px 10px;
+   /*background:#ddd;*/
+   color:#DDD;
+   text-decoration:none;
+   font-size :15px;
+   line-height:1.3em;
+}
+.navmenu ul li a:hover {
+   /*background:#369;*/
+   color:#fff;
+   background-color:transparent;
+}
+.navmenu ul li a.active,
+.navmenu ul li a.active:hover {
+
+   /*background:#ddd;*/
+   font-weight:bold;
+   margin:0 0 0 10px;
+   padding:3px 10px;
+   border-bottom: 4px solid #DEDEDE;
+   background-color:transparent;
 }
 
 .navmenu.active
@@ -325,6 +368,7 @@ div.special-div{
 }
 
 /*------------------------------------------------------------------------------------*/ 
+.comments,
 .entry-index-box,
 .entry-index
 {
@@ -350,7 +394,11 @@ div.special-div{
 .entry-index-box
 {
    /* height: 100px;*/
-
+}
+.comments,
+section.body-entry
+{
+    padding: 10px;
 }
 .day
 {
@@ -367,25 +415,97 @@ div.special-div{
 article.banner h1
 {
     padding: 30px;
-    font-family: 'Calligraffitti', cursive;
-    font-size:75px;
+    /*font-family: 'Calligraffitti', cursive;*/
+    font-family: 'Rock Salt', cursive;
+    font-size:55px;
     text-align: center ;
     line-height: 1.0em;
+    
+    webkit-transform: rotate(355deg);
+    -moz-transform: rotate(355deg);
+    -o-transform: rotate(355deg);
+    writing-mode: lr-tb;
 }
 
 article.banner a
 {
     color: #000000;
     font-weight: bold;
+    text-decoration: none;
+    
 }
 
 article.banner a:hover
 {
+    background-color:transparent;
+    text-decoration: none;
+    font-size:60px;
+}
+
+h2.title a:hover
+{
+    background-color:transparent;
     text-decoration:underline;
 }
 
-/*----------------------------------------------------------------------------------*/
-.tweets
+h2.title a,
+h2.title
+{   
+    font-family: 'Cuprum', sans-serif;
+    color: #212121;
+    text-shadow: #ABABAB 0px 1px 2px, #000000 -1px -1px 2px;
+    font-size:40px;
+    padding: 5px;
+    text-decoration: none;
+}
+.twitter-share-button,
+.google-plusone-button{
+    float: left;
+
+}
+/*
+.entry-tag a:hover
 {
+    text-decoration:underline;
+}
+
+.entry-tag
+{
+    padding: 5px;
+}
+.entry-tag li{
+    padding:5px;
+    list-style-type: none;
+    float: left;
+    padding:2px;
+    margin: 1px;
+    border: 1px solid #000;
+    background-color:#C7D4ED;
+}
+.entry-tag a{
     
+    color: #ffffff;
+    text-decoration:none;
+    font-weight:bold;
+    
+}
+*/
+.entry-tag {
+	list-style:none;
+	font-size:.9em;
+    padding-bottom: 10px;
+    
+}
+.entry-tag li {
+	padding-right:5px;
+    list-style-type: none;
+    float: left;
+}
+.entry-tag li a,
+.entry-tag li strong {
+	padding:.2em .4em;
+	background:#f4f4f4;
+	border-right:1px solid #ddd;
+	border-bottom:1px solid #ddd;
+	text-decoration:none;
 }

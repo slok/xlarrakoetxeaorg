@@ -5,51 +5,73 @@
 {% load tweetertags %}
 {% load googletags %}
 
-{% block pageTitle %} {{entry.title}} {% endblock pageTitle %} 
+{% block pageTitle %}  {% endblock pageTitle %} 
 
 {% block mainSection %}
-    <section class="main-section grid_16">
-        <div class="special-div">
-        <article>
-            <section class="entry">
-                <section class="entry-date">
-                    <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">{{entry.pub_date|date:'l, F d, Y'}}</a>
-                </section>
-                <section class="share-buttons">
-                    {% tweet_button 'horizontal' %}
-                    {% plus_one_button %}
-                </section>
-                </br> </br>
-                {% if entry.entry_format == 'html' %}
-                
-                    {{entry.body|safe}}
-                
-                    {% else %}{% if entry.entry_format == 'md' %}
-                
-                        {{entry.body|markdown:'codehilite,tables'}}
-                        
-                    {% endif %}
-                {% endif %}
-                </br></br>
-                <section class="entry-author">
-                    <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
-                </section>
-                {% entry_tags entry %}
+<article class="entry">
+    
+    <div class="entry-index-box grid_2">
+    <div class="special-div">
+        <a href="{% url blog.views.blog_entries_month entry.pub_date|date:'Y', entry.pub_date|date:'m' %}">
+          <div class="day">
+                {{entry.pub_date|date:'d'}}
+        </div>
+        <div class="month">
+            {{entry.pub_date|date:'M Y'}}
+        </div>
+        </a>
+    </div>
+    </div>
+    
+    <div class="entry-index grid_14">
+    <div class="special-div">
+        <h2 class="title"> {{entry.title}} </h2>
+    </div>
+    </div>   
+    
+    <div class="clear"></div>
+    
+     <!-- Content of the article box-->
+    <div class="entry-index grid_16">
+    <div class="special-div">
+        <section class="body-entry">
+            <section class="share-buttons">
+                {% tweet_button 'horizontal' %}
+                {% plus_one_button %}
             </section>
             </br>
-
-            <section class="comments">
-                <h2 class="section-title">comments</h2>
-                {% if entry.allow_comments %}
-                    {% disqus_dev %} <!-- BUG! if devel is enabled then the comments are for all the page not for each article, so we put again disqus_url and disqus_identifier-->
-                    {% set_disqus_identifier 'blog_entry_' entry.id%}
-                    {% set_disqus_url url %}
-                    {% disqus_show_comments %}
-                {% else %}
-                    <h3>Comments have been closed for this entry.</h3>
+            {% if entry.entry_format == 'html' %}
+            
+                {{entry.body|safe}}
+            
+                {% else %}{% if entry.entry_format == 'md' %}
+            
+                    {{entry.body|markdown:'codehilite,tables'}}
+                    
                 {% endif %}
+            {% endif %}
+            </br>
+            <section class="entry-author">
+                <div>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</div>
+                <!--{% entry_tags entry %}-->
             </section>
-        </article>
-        </div><!-- special-div-->
+        </section>
+    </div>
+    </div>
+    <div class="clear"></div>
+
+    <section class="comments grid_16">
+    <div class="special-div">
+        <h2 class="section-title">comments</h2>
+        {% if entry.allow_comments %}
+            {% disqus_dev %} <!-- BUG! if devel is enabled then the comments are for all the page not for each article, so we put again disqus_url and disqus_identifier-->
+            {% set_disqus_identifier 'blog_entry_' entry.id%}
+            {% set_disqus_url url %}
+            {% disqus_show_comments %}
+        {% else %}
+            <h3>Comments have been closed for this entry.</h3>
+        {% endif %}
+    </div>
     </section>
+</article>
 {% endblock mainSection %}

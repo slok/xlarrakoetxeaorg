@@ -36,25 +36,27 @@
             <!-- Content of the article box-->
             <div class="entry-index grid_14">
             <div class="special-div">
-                <h2 class="title"><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h2>
-                {% if entry.entry_format == 'html' %}
-                
-                    {{entry.body|readmore:'<!--more-->'|safe}}
-                
-                    {% else %}{% if entry.entry_format == 'md' %}
-                
-                        {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite,tables'}}
-                        
+                <section class="body-entry">
+                    <h2 class="title"><a href="{{ entry.get_absolute_url }}">{{entry.title}}</a></h2>
+                    {% if entry.entry_format == 'html' %}
+                    
+                        {{entry.body|readmore:'<!--more-->'|safe}}
+                    
+                        {% else %}{% if entry.entry_format == 'md' %}
+                    
+                            {{entry.body|readmore:'<!--more-->'|markdown:'safe,codehilite,tables'}}
+                            
+                        {% endif %}
+                    
                     {% endif %}
-                
-                {% endif %}
-                </br>
-                <div class="readmore"> <a href="{{ entry.get_absolute_url }}"><b>Read more</b></a> </div>
-                </br>
-                <section class="entry-author">
-                    <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
-                    <span><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a></span>
-                    {% disqus_num_replies %}
+                    </br>
+                    <div class="readmore"> <a href="{{ entry.get_absolute_url }}"><b>Read more</b></a> </div>
+                    </br>
+                    <section class="entry-author">
+                        <span>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</span>
+                        <span><a href="{{ entry.get_absolute_url }}#disqus_thread" data-disqus-identifier="blog_entry_{{ entry.id }}">View comments</a></span>
+                        {% disqus_num_replies %}
+                    </section>
                 </section>
             </div>
             </div>

@@ -56,13 +56,15 @@
 	<!-- CSS: screen, mobile & print are all in the same file -->
 	<link rel="stylesheet" href="{{STATIC_URL}}css/style.css">
     <link rel="stylesheet" href="{{STATIC_URL}}css/960.css">
-	<link rel="stylesheet" href="{{STATIC_URL}}css/pygments-default.css">
+	<link rel="stylesheet" href="{{STATIC_URL}}css/pygments-tango.css">
     
 	<!-- all our JS is at the bottom of the page, except for Modernizr. -->
 	<script src="{{STATIC_URL}}js/modernizr-1.7.min.js"></script>
     
     <!--fonts-->
-    <link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>
+    <!--<link href='http://fonts.googleapis.com/css?family=Calligraffitti' rel='stylesheet' type='text/css'>-->
+    <link href='http://fonts.googleapis.com/css?family=Cuprum' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     
     {% block head %}{% endblock head %}
 </head>
@@ -72,17 +74,18 @@
 <div class="wrapper"><!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
 	 <!--*********************************************************************-->
+    <a href="http://github.com/slok"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/7afbc8b248c68eb468279e8c17986ad46549fb71/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6461726b626c75655f3132313632312e706e67" alt="Fork me on GitHub"></a>
     <header>
 		<div class="container_16">
             <nav class="grid_16">
             <div class="navmenu special-div">
-                <ol>
+                <ul>
                      {% block navmenu %}
-                        <li><a class="button" href="/about" >About</a></li>
-                        <li><a class="button" href="/projects">Projects</a></li>
                         <li><a class="button" href="/blog">Blog</a></li> 
+                        <li><a class="button" href="/projects">Projects</a></li>
+                        <li><a class="button" href="/about" >About</a></li>
                      {% endblock navmenu %}
-                </ol>
+                </ul>
             </div>
             </nav>
             <!-- end .grid_16 -->
@@ -94,6 +97,7 @@
         <div class="container_16">
             <article class="grid_16">
             <div class="special-div">
+                </br>
                <h1><a href="/">Xabier (slok) Larrakoetxea</a></h1>
             </div>
             </article>
