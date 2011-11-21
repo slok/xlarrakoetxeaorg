@@ -224,20 +224,20 @@ p {
     line-height: 18px;
 }
 h1{
-    font-size: 22px;
+    font-size: 18px;
     font-style: bold;
 }
 h2{
-    font-size: 20px;
+    font-size: 16px;
     font-style: bold;
 }
 h3{
-    font-size: 18px;
+    font-size: 14px;
     font-style: bold;
 }
 
 body{
-    line-height:18px;
+    line-height:12px;
 }
 
 h1,h2,h3,h4,h5,h6{
@@ -404,13 +404,13 @@ section.body-entry
 {
     margin: 10px;
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bold;
 }
 .month
 {
     text-align: center;
-    font-size: 15px;
+    font-size: 14px;
 }
 article.banner h1
 {
@@ -454,7 +454,7 @@ h2.title
     font-family: 'Cuprum', sans-serif;
     color: #212121;
     text-shadow: #ABABAB 0px 1px 2px, #000000 -1px -1px 2px;
-    font-size:40px;
+    font-size:35px;
     padding: 5px;
     text-decoration: none;
 }
