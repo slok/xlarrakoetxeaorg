@@ -94,9 +94,12 @@ def tag_detail(request, slug):
     
 def tag_list(request):
 
-    tag_cloud = Tag.objects.cloud_for_model(Entry, steps=3, filters=dict(status='p'))
+    #tag_cloud = Tag.objects.cloud_for_model(Entry, steps=3, filters=dict(status='p'))
+    tag_list = Tag.objects.usage_for_model(Entry, counts=True)
     data = { 
-        'tag_cloud' : tag_cloud,
+        #'tag_cloud' : tag_cloud,
+        'tag_list' : tag_list,
+        
     }
     
     return render_to_response('blog/tag_list.html', data, context_instance=RequestContext(request))

@@ -1,25 +1,32 @@
 {% extends "blog/blog.html" %}
 
 {% block navmenu %}
-    <li><a class="button" href="/blog/search" >Search</a></li>
-    <li><a class="button active" href="/blog/tags" >Tags</a></li>
-    <li><a class="button" href="/about" >About</a></li>
-    <li><a class="button" href="/projects">Projects</a></li>
     <li><a class="button" href="/blog">Blog</a></li> 
+    <li><a class="button" href="/projects">Projects</a></li>
+    <li><a class="button" href="/about" >About</a></li>
+    <li><a class="button active" href="/blog/tags" >Tags</a></li>
+    <li><a class="button" href="/blog/search" >Search</a></li>
 {% endblock navmenu %}
 
 {% block pageTitle %} Tag cloud {% endblock pageTitle %}
 
 {% block mainSection %}
-    <section class="main-section grid_12">
+
+    <section class="main-section grid_16">
     <div class="special-div">
-    {% if tag_cloud %}
-        <p class="tag-cloud">
-        {% for tag in tag_cloud %}
-            <a href="{% url blog.views.tag_detail tag.name%}" style="font-size: {{ tag.font_size }}em;">{{ tag.name }}</a>
-        {% endfor %}
-        </p>
-    {% endif %}
+    <article class="entry-index">
+    {% if tag_list %}
+        <section class="entry-tag-vertical">
+            <ul>
+                {% for tag in tag_list %}
+                <li><a href="{% url blog.views.tag_detail tag.name %}">{{ tag.name }}</a> <span class="tag-count"> x {{tag.count}} </span> </li> 
+                {% endfor %}
+            </ul>
+        </section>
+        {% else %}
+            <p>No tags available</p>
+        {% endif %} 
+    <article>
     </div>
     </section>
 {% endblock mainSection %}

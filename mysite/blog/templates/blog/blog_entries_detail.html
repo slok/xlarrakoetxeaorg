@@ -53,7 +53,7 @@
             </br>
             <section class="entry-author">
                 <div>posted by <a href="{% url blog.views.author_detail entry.author.username %}"> {{entry.author.username}}</a> at {{entry.pub_date|date:'f A'}}</div>
-                <!--{% entry_tags entry %}-->
+                {% entry_tags entry %}
             </section>
         </section>
     </div>

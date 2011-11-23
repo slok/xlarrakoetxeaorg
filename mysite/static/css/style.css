@@ -195,7 +195,7 @@ header
 article.banner
 {
     background:url('../img/cork_1.png') repeat top center;
-    height: 210px;
+    height: 150px;
 }
 
 footer
@@ -389,6 +389,7 @@ div.special-div{
     /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
     margin-top: 20px;
     margin-bottom: 20px;
+    padding-bottom: 10px;
 
 }
 .entry-index-box
@@ -414,10 +415,10 @@ section.body-entry
 }
 article.banner h1
 {
-    padding: 30px;
+    padding: 20px;
     /*font-family: 'Calligraffitti', cursive;*/
     font-family: 'Rock Salt', cursive;
-    font-size:55px;
+    font-size:47px;
     text-align: center ;
     line-height: 1.0em;
     
@@ -439,7 +440,7 @@ article.banner a:hover
 {
     background-color:transparent;
     text-decoration: none;
-    font-size:60px;
+    font-size:50px;
 }
 
 h2.title a:hover
@@ -490,22 +491,69 @@ h2.title
     
 }
 */
+.entry-tag-vertical,
 .entry-tag {
 	list-style:none;
 	font-size:.9em;
     padding-bottom: 10px;
+    margin-top: 15px;
+    padding:0px;
     
 }
+
+.entry-tag-vertical
+{
+    padding: 15px;
+}
+
+.entry-tag-vertical li,
 .entry-tag li {
 	padding-right:5px;
     list-style-type: none;
     float: left;
+    padding:0px;
+    margin-right: 10px;
 }
+.entry-tag-vertical li
+{
+    float: none;
+    padding: 10px;
+}
+
+.entry-tag-vertical li a,
+.entry-tag-vertical li strong,
 .entry-tag li a,
 .entry-tag li strong {
 	padding:.2em .4em;
-	background:#f4f4f4;
-	border-right:1px solid #ddd;
-	border-bottom:1px solid #ddd;
+	background-color:#596C91;
+    color:#E1E7F2;
+	border-right:1px solid #41506B;
+	border-bottom:1px solid #2E384D;
 	text-decoration:none;
+    font-weight:normal;
+}
+.entry-tag-vertical li a:hover,
+.entry-tag-vertical li strong:hover,
+.entry-tag li a:hover,
+.entry-tag li strong:hover {
+	padding:.2em .4em;
+	background-color:#E1E7F2;
+    color:#596C91;
+	border-right:1px solid #596C91;
+	border-bottom:1px solid #596C91;
+	text-decoration:none;
+    font-weight:normal;
+}
+
+.entry-tag-vertical ul,
+.entry-tag ul
+{
+    margin: 0px;
+    padding:0px;
+}
+
+.tag-count
+{
+    font-weight:bold;
+    font-size:14px;
 }
