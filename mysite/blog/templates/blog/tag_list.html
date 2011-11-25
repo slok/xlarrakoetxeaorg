@@ -12,7 +12,11 @@
 
 {% block mainSection %}
 
-    <section class="main-section grid_16">
+    <section class="tags-tytle-box grid_16">
+        <h2 class="title"> Tags ({{tag_list.size}}) </h2>
+    </section>
+    <div class="clear"></div>
+    <section class="grid_16">
     <div class="special-div">
     <article class="entry-index">
     {% if tag_list %}
