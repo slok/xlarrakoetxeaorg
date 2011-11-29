@@ -371,6 +371,7 @@ div.special-div{
 }
 
 /*------------------------------------------------------------------------------------*/ 
+.tags-tytle-box,
 .comments,
 .entry-index-box,
 .entry-index
@@ -404,6 +405,12 @@ section.body-entry
 {
     padding: 10px;
 }
+
+.tags-tytle-box
+{
+    padding:0px;
+}
+
 .day
 {
     margin: 10px;
