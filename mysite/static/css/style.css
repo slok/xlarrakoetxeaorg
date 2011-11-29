@@ -187,7 +187,8 @@ body
 
 header
 {
-    background: #3D3D3D;
+    /*background: #3D3D3D;*/
+    background:url('../img/px_by_Gre3g.png') repeat top center;
     /*padding: 1px 0;*/
     /*margin-top: 15px;*/
 
@@ -200,7 +201,9 @@ article.banner
 
 footer
 {
-    background: #3D3D3D;
+    background:url('../img/px_by_Gre3g.png') repeat top center;
+    /*background: #3D3D3D;*/
+    padding: 5px;
     text-align: center;
 
 }
@@ -556,4 +559,15 @@ h2.title
 {
     font-weight:bold;
     font-size:14px;
+}
+
+.kbd
+{
+    white-space:nowrap;
+    color:#000;
+    background:#eee;
+    border-style:solid;
+    border-color:#ccc #aaa #888 #bbb;
+    padding:2px 4px;
+    border-width:1px 3px 3px 1px;
 }
