@@ -12,12 +12,10 @@ Content
 _The ones that I already have in mind_
 
 * Blog
-* Normal site
 * Disqus comments
 * Markdown
 * Syntax highlight (Pygments)
-* Mobile version
-
+* Tags
 
 License
 -------
