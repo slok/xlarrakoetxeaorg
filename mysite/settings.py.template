@@ -1,0 +1,5 @@
+
+#Flask configuration
+DEBUG = True
+SECRET_KEY = 'development key'
+HOST = '127.0.0.1'
