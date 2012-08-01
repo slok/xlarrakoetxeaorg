@@ -1,6 +1,7 @@
 
 #append the application for the tests
 import sys
+print(sys)
 sys.path.append("mysite")
 import unittest
 
