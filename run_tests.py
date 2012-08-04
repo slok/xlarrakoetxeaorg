@@ -5,9 +5,10 @@ import os
 import unittest
 
 
-# Add mysite dir inside the python path (need for travis)
+# Add dirs inside the python path (need for travis)
 BASE_DIR = os.path.dirname(__file__)
 sys.path.append(BASE_DIR + '/mysite')
+sys.path.append(BASE_DIR)
 
 # Import tests (add)
 from tests.blog.test_index import *
