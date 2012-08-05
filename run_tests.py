@@ -9,6 +9,7 @@ import unittest
 BASE_DIR = os.path.dirname(__file__)
 sys.path.append(BASE_DIR + '/mysite')
 sys.path.append(BASE_DIR)
+print(sys.path)
 
 # Import tests (add)
 from tests.blog.test_index import *
