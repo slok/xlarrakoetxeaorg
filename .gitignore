@@ -43,3 +43,6 @@ pip-log.txt
 
 #settings
 settings.py
+
+#rope autocompletion
+.ropeproject
