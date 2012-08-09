@@ -5,11 +5,12 @@ SECRET_KEY = 'development key'
 HOST = '127.0.0.1'
 
 # Database settings
-USER = 'postgres'
-PASSWORD = 'postgres'
-HOST = '127.0.0.1'
-PORT = 5432
-DATABASE = 'xlarrakoetxeaorg'
-ENGINE = 'psycopg2'
+DB_USER = 'postgres'
+DB_PASSWORD = 'postgres'
+DB_HOST = '127.0.0.1'
+DB_PORT = 5432
+DB_DATABASE = 'xlarrakoetxeaorg'
+DB_ENGINE = 'psycopg2'
 SQLALCHEMY_DATABASE_URI = 'postgresql+%s://%s:%s@%s:%d/%s' % \
-                            (ENGINE, USER, PASSWORD, HOST, PORT, DATABASE)
+                            (DB_ENGINE, DB_USER, DB_PASSWORD, DB_HOST, DB_PORT,
+                            DB_DATABASE)
