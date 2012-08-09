@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 
 #append the application for the tests
 import sys
